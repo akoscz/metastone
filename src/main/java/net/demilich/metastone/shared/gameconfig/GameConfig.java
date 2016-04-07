@@ -1,4 +1,4 @@
-package net.demilich.metastone.gui.gameconfig;
+package net.demilich.metastone.shared.gameconfig;
 
 import net.demilich.metastone.game.decks.DeckFormat;
 

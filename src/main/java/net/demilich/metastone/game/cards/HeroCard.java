@@ -44,10 +44,6 @@ public class HeroCard extends Card {
 		return getClassRestriction();
 	}
 
-	public Image getImage() {
-		return new Image(IconFactory.getHeroIconUrl(getHeroClass()));
-	}
-
 	@Override
 	public PlayCardAction play() {
 		throw new NotImplementedException("Hero cards cannot be played");

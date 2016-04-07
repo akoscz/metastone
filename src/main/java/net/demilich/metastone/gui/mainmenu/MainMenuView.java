@@ -10,7 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import net.demilich.metastone.AppConfig;
+import net.demilich.metastone.shared.AppConfig;
 import net.demilich.metastone.ApplicationFacade;
 import net.demilich.metastone.GameNotification;
 

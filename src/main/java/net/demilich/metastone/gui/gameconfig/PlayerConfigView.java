@@ -31,10 +31,12 @@ import net.demilich.metastone.game.decks.DeckFactory;
 import net.demilich.metastone.game.decks.DeckFormat;
 import net.demilich.metastone.game.entities.heroes.HeroClass;
 import net.demilich.metastone.game.entities.heroes.MetaHero;
+import net.demilich.metastone.gui.IconFactory;
 import net.demilich.metastone.gui.common.BehaviourStringConverter;
 import net.demilich.metastone.gui.common.DeckStringConverter;
 import net.demilich.metastone.gui.common.HeroStringConverter;
 import net.demilich.metastone.gui.playmode.config.PlayerConfigType;
+import net.demilich.metastone.shared.gameconfig.PlayerConfig;
 
 public class PlayerConfigView extends VBox {
 
@@ -143,12 +145,16 @@ public class PlayerConfigView extends VBox {
 		playerConfig.setHideCards(newValue);
 	}
 
-	private void selectHero(HeroCard HeroCard) {
-		Image heroPortrait = HeroCard.getImage();
+	private void selectHero(HeroCard card) {
+		Image heroPortrait = getHeroImage(card);
 		heroIcon.setImage(heroPortrait);
-		heroNameLabel.setText(HeroCard.getName());
-		getPlayerConfig().setHeroCard(HeroCard);
+		heroNameLabel.setText(card.getName());
+		getPlayerConfig().setHeroCard(card);
 		filterDecks();
+	}
+
+	private Image getHeroImage(HeroCard card) {
+		return new Image(IconFactory.getHeroIconUrl(card.getHeroClass()));
 	}
 
 	public void setupBehaviours() {

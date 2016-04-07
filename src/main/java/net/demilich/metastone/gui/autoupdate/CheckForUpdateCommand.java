@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
 
-import net.demilich.metastone.AppConfig;
+import net.demilich.metastone.shared.AppConfig;
 import net.demilich.metastone.GameNotification;
 import net.demilich.nittygrittymvc.SimpleCommand;
 import net.demilich.nittygrittymvc.interfaces.INotification;
