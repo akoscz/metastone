@@ -1,41 +1,40 @@
 package net.demilich.metastone.shared;
 
-import net.demilich.metastone.MetaStone;
 import net.demilich.nittygrittymvc.Facade;
 import net.demilich.nittygrittymvc.interfaces.IFacade;
-import net.demilich.metastone.gui.autoupdate.CheckForUpdateCommand;
-import net.demilich.metastone.gui.battleofdecks.StartBattleOfDecksCommand;
-import net.demilich.metastone.gui.deckbuilder.AddCardToDeckCommand;
-import net.demilich.metastone.gui.deckbuilder.ChangeDeckNameCommand;
-import net.demilich.metastone.gui.deckbuilder.DeleteDeckCommand;
-import net.demilich.metastone.gui.deckbuilder.FillDeckWithRandomCardsCommand;
-import net.demilich.metastone.gui.deckbuilder.FilterCardsCommand;
-import net.demilich.metastone.gui.deckbuilder.ImportDeckCommand;
-import net.demilich.metastone.gui.deckbuilder.LoadDeckFormatsCommand;
-import net.demilich.metastone.gui.deckbuilder.LoadDecksCommand;
-import net.demilich.metastone.gui.deckbuilder.RemoveCardFromDeckCommand;
-import net.demilich.metastone.gui.deckbuilder.SaveDeckCommand;
-import net.demilich.metastone.gui.deckbuilder.SetActiveDeckCommand;
-import net.demilich.metastone.gui.deckbuilder.metadeck.AddDeckToMetaDeckCommand;
-import net.demilich.metastone.gui.deckbuilder.metadeck.RemoveDeckFromMetaDeckCommand;
-import net.demilich.metastone.gui.playmode.StartGameCommand;
-import net.demilich.metastone.gui.playmode.animation.AnimationCompletedCommand;
-import net.demilich.metastone.gui.playmode.animation.AnimationLockCommand;
-import net.demilich.metastone.gui.playmode.animation.AnimationStartedCommand;
-import net.demilich.metastone.gui.playmode.config.RequestDeckFormatsCommand;
-import net.demilich.metastone.gui.playmode.config.RequestDecksCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.CreateNewSandboxCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.ModifyPlayerDeckCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.ModifyPlayerHandCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.PerformActionCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.SelectPlayerCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.SpawnMinionCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.StartPlaySandboxCommand;
-import net.demilich.metastone.gui.sandboxmode.commands.StopPlaySandboxCommand;
-import net.demilich.metastone.gui.simulationmode.SimulateGamesCommand;
-import net.demilich.metastone.gui.trainingmode.PerformTrainingCommand;
-import net.demilich.metastone.gui.trainingmode.RequestTrainingDataCommand;
-import net.demilich.metastone.gui.trainingmode.SaveTrainingDataCommand;
+import net.demilich.metastone.shared.commands.autoupdate.CheckForUpdateCommand;
+import net.demilich.metastone.shared.commands.battleofdecks.StartBattleOfDecksCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.AddCardToDeckCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.ChangeDeckNameCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.DeleteDeckCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.FillDeckWithRandomCardsCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.FilterCardsCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.ImportDeckCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.LoadDeckFormatsCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.LoadDecksCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.RemoveCardFromDeckCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.SaveDeckCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.SetActiveDeckCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.metadeck.AddDeckToMetaDeckCommand;
+import net.demilich.metastone.shared.commands.deckbuilder.metadeck.RemoveDeckFromMetaDeckCommand;
+import net.demilich.metastone.shared.commands.playmode.StartGameCommand;
+import net.demilich.metastone.shared.commands.playmode.animation.AnimationCompletedCommand;
+import net.demilich.metastone.shared.commands.playmode.animation.AnimationLockCommand;
+import net.demilich.metastone.shared.commands.playmode.animation.AnimationStartedCommand;
+import net.demilich.metastone.shared.commands.playmode.config.RequestDeckFormatsCommand;
+import net.demilich.metastone.shared.commands.playmode.config.RequestDecksCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.CreateNewSandboxCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.ModifyPlayerDeckCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.ModifyPlayerHandCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.PerformActionCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.SelectPlayerCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.SpawnMinionCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.StartPlaySandboxCommand;
+import net.demilich.metastone.shared.commands.sandboxmode.StopPlaySandboxCommand;
+import net.demilich.metastone.shared.commands.simulationmode.SimulateGamesCommand;
+import net.demilich.metastone.shared.commands.trainingmode.PerformTrainingCommand;
+import net.demilich.metastone.shared.commands.trainingmode.RequestTrainingDataCommand;
+import net.demilich.metastone.shared.commands.trainingmode.SaveTrainingDataCommand;
 
 public class ApplicationFacade extends Facade<GameNotification> {
 
@@ -92,8 +91,7 @@ public class ApplicationFacade extends Facade<GameNotification> {
 		registerCommand(GameNotification.REQUEST_TRAINING_DATA, new RequestTrainingDataCommand());
 	}
 
-	public void startUp(MetaStone main) {
+	public void startUp() {
 		sendNotification(GameNotification.APPLICATION_STARTUP);
 	}
-
 }

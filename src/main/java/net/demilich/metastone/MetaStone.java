@@ -27,7 +27,7 @@ public class MetaStone extends Application {
 
 		ApplicationFacade facade = (ApplicationFacade) ApplicationFacade.getInstance();
 		final MetaStone instance = new MetaStone();
-		facade.startUp(instance);
+		facade.startUp();
 
 		StackPane root = new StackPane();
 		root.setAlignment(Pos.CENTER);
