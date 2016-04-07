@@ -1,6 +1,5 @@
 package net.demilich.metastone.shared.trainingmode;
 
-import net.demilich.metastone.gui.trainingmode.ITrainingDataListener;
 import net.demilich.nittygrittymvc.Notification;
 import net.demilich.metastone.shared.GameNotification;
 

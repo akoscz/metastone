@@ -1,5 +1,6 @@
 package net.demilich.metastone.gui.trainingmode;
 
+import net.demilich.metastone.shared.trainingmode.ITrainingDataListener;
 import net.demilich.metastone.shared.trainingmode.RequestTrainingDataNotification;
 import net.demilich.metastone.shared.trainingmode.TrainingData;
 import org.slf4j.Logger;
