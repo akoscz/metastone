@@ -10,7 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.cards.desc.CardDesc;
 import net.demilich.nittygrittymvc.Proxy;
 

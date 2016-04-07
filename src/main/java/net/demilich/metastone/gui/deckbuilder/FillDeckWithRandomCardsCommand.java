@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import net.demilich.nittygrittymvc.SimpleCommand;
 import net.demilich.nittygrittymvc.interfaces.INotification;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.cards.Card;
 import net.demilich.metastone.game.decks.Deck;
 

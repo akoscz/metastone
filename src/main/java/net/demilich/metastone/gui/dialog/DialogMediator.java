@@ -11,7 +11,7 @@ import net.demilich.nittygrittymvc.interfaces.INotification;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.stage.Window;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 
 public class DialogMediator extends Mediator<GameNotification> {
 

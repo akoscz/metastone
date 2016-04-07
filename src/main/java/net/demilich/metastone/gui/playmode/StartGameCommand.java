@@ -3,7 +3,7 @@ package net.demilich.metastone.gui.playmode;
 import net.demilich.nittygrittymvc.SimpleCommand;
 import net.demilich.nittygrittymvc.interfaces.INotification;
 import net.demilich.metastone.ApplicationFacade;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.Player;
 import net.demilich.metastone.game.decks.DeckFormat;

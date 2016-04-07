@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import net.demilich.metastone.ApplicationFacade;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 
 public class TrainingModeView extends BorderPane implements EventHandler<ActionEvent> {
 

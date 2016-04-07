@@ -15,7 +15,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.gui.IconFactory;
 import net.demilich.metastone.gui.dialog.DialogType;
 import net.demilich.nittygrittymvc.Mediator;

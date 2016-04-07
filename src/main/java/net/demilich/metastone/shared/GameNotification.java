@@ -1,4 +1,4 @@
-package net.demilich.metastone;
+package net.demilich.metastone.shared;
 
 public enum GameNotification {
 	APPLICATION_STARTUP,

@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.cards.Card;
 import net.demilich.metastone.game.cards.CardCatalogue;
 import net.demilich.metastone.game.cards.CardCollection;
@@ -31,8 +31,8 @@ import net.demilich.metastone.game.decks.Deck;
 import net.demilich.metastone.game.decks.DeckFormat;
 import net.demilich.metastone.game.decks.MetaDeck;
 import net.demilich.metastone.game.entities.heroes.HeroClass;
-import net.demilich.metastone.gui.deckbuilder.validation.DefaultDeckValidator;
-import net.demilich.metastone.gui.deckbuilder.validation.IDeckValidator;
+import net.demilich.metastone.shared.deckbuilder.validation.DefaultDeckValidator;
+import net.demilich.metastone.shared.deckbuilder.validation.IDeckValidator;
 import net.demilich.nittygrittymvc.Proxy;
 
 public class DeckProxy extends Proxy<GameNotification> {

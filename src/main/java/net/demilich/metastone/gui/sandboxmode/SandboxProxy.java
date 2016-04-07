@@ -1,7 +1,7 @@
 package net.demilich.metastone.gui.sandboxmode;
 
 import net.demilich.nittygrittymvc.Proxy;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.Player;
 

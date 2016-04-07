@@ -2,7 +2,7 @@ package net.demilich.metastone.gui.deckbuilder;
 
 import net.demilich.nittygrittymvc.SimpleCommand;
 import net.demilich.nittygrittymvc.interfaces.INotification;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 
 public class ChangeDeckNameCommand extends SimpleCommand<GameNotification> {
 

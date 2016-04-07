@@ -1,5 +1,6 @@
 package net.demilich.metastone;
 
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.nittygrittymvc.SimpleCommand;
 import net.demilich.nittygrittymvc.interfaces.INotification;
 import net.demilich.metastone.game.GameContext;

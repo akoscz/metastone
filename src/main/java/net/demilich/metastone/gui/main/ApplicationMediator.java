@@ -7,7 +7,7 @@ import net.demilich.nittygrittymvc.Mediator;
 import net.demilich.nittygrittymvc.interfaces.INotification;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.gui.battleofdecks.BattleOfDecksMediator;
 import net.demilich.metastone.gui.deckbuilder.DeckBuilderMediator;
 import net.demilich.metastone.gui.mainmenu.MainMenuMediator;

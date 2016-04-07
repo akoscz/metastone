@@ -1,8 +1,9 @@
 package net.demilich.metastone.gui.trainingmode;
 
+import net.demilich.metastone.shared.trainingmode.TrainingData;
 import net.demilich.nittygrittymvc.SimpleCommand;
 import net.demilich.nittygrittymvc.interfaces.INotification;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 
 public class SaveTrainingDataCommand extends SimpleCommand<GameNotification> {
 

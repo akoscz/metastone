@@ -5,7 +5,7 @@ import java.util.List;
 
 import net.demilich.nittygrittymvc.Mediator;
 import net.demilich.nittygrittymvc.interfaces.INotification;
-import net.demilich.metastone.GameNotification;
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.gui.battleofdecks.BattleOfDecksMediator;
 import net.demilich.metastone.gui.deckbuilder.DeckBuilderMediator;
 import net.demilich.metastone.gui.playmode.config.PlayModeConfigMediator;

@@ -1,5 +1,6 @@
 package net.demilich.metastone;
 
+import net.demilich.metastone.shared.GameNotification;
 import net.demilich.nittygrittymvc.Facade;
 import net.demilich.nittygrittymvc.interfaces.IFacade;
 import net.demilich.metastone.gui.autoupdate.CheckForUpdateCommand;

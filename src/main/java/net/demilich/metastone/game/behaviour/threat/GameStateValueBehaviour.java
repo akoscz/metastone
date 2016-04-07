@@ -15,8 +15,8 @@ import net.demilich.metastone.game.behaviour.Behaviour;
 import net.demilich.metastone.game.behaviour.IBehaviour;
 import net.demilich.metastone.game.behaviour.heuristic.IGameStateHeuristic;
 import net.demilich.metastone.game.cards.Card;
-import net.demilich.metastone.gui.trainingmode.RequestTrainingDataNotification;
-import net.demilich.metastone.gui.trainingmode.TrainingData;
+import net.demilich.metastone.shared.trainingmode.RequestTrainingDataNotification;
+import net.demilich.metastone.shared.trainingmode.TrainingData;
 
 public class GameStateValueBehaviour extends Behaviour {
 
