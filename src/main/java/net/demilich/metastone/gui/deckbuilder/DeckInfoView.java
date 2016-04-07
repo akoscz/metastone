@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
-import net.demilich.metastone.ApplicationFacade;
+import net.demilich.metastone.shared.ApplicationFacade;
 import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.decks.Deck;
 import net.demilich.metastone.game.decks.MetaDeck;

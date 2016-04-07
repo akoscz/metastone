@@ -6,7 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.stage.Popup;
 import javafx.stage.Window;
 import javafx.util.Duration;
-import net.demilich.metastone.ApplicationFacade;
+import net.demilich.metastone.shared.ApplicationFacade;
 import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.cards.Card;
 import net.demilich.metastone.gui.cards.CardTooltip;

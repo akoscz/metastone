@@ -15,7 +15,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.layout.BorderPane;
-import net.demilich.metastone.ApplicationFacade;
+import net.demilich.metastone.shared.ApplicationFacade;
 import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.decks.Deck;
 import net.demilich.metastone.game.decks.DeckFormat;

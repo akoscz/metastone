@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
-import net.demilich.metastone.ApplicationFacade;
+import net.demilich.metastone.shared.ApplicationFacade;
 import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.behaviour.human.HumanMulliganOptions;
 import net.demilich.metastone.game.cards.Card;

@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import net.demilich.metastone.shared.AppConfig;
-import net.demilich.metastone.ApplicationFacade;
+import net.demilich.metastone.shared.ApplicationFacade;
 import net.demilich.metastone.shared.GameNotification;
 
 public class MainMenuView extends BorderPane {

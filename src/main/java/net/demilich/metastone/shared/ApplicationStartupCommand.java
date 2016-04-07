@@ -1,4 +1,4 @@
-package net.demilich.metastone;
+package net.demilich.metastone.shared;
 
 import net.demilich.metastone.shared.GameNotification;
 import net.demilich.nittygrittymvc.SimpleCommand;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.demilich.metastone.shared.AppConfig;
-import net.demilich.metastone.ApplicationFacade;
+import net.demilich.metastone.shared.ApplicationFacade;
 import net.demilich.metastone.shared.GameNotification;
 import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.Player;
