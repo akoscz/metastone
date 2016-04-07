@@ -1,13 +1,16 @@
 package net.demilich.metastone.game.behaviour.threat.cuckoo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Predicate;
 
 import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.Player;
@@ -110,7 +113,7 @@ public class WinRateFitness implements IFitnessFunction {
 					e.printStackTrace();
 				}
 			}
-			futures.removeIf(future -> future.isDone());
+			removeIfDone(futures);
 			try {
 				Thread.sleep(20);
 			} catch (InterruptedException e) {
@@ -121,4 +124,15 @@ public class WinRateFitness implements IFitnessFunction {
 		return stats.getDouble(Statistic.WIN_RATE) * 100;
 	}
 
+	boolean removeIfDone(List<Future<Void>> futures) {
+		boolean removed = false;
+		final Iterator<Future<Void>> each = futures.iterator();
+		while (each.hasNext()) {
+			if (each.next().isDone()) {
+				each.remove();
+				removed = true;
+			}
+		}
+		return removed;
+	}
 }
