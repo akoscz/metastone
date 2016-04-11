@@ -2,9 +2,9 @@ package net.demilich.metastone.game.cards;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Predicate;
 
@@ -115,7 +115,13 @@ public class CardCollection implements Iterable<Card>, Cloneable {
 	}
 
 	public void removeAll(Predicate<Card> filter) {
-		cards.removeIf(filter);
+		Objects.requireNonNull(filter);
+		final Iterator<Card> each = cards.iterator();
+		while (each.hasNext()) {
+			if (filter.test(each.next())) {
+				each.remove();
+			}
+		}
 	}
 
 	public Card removeFirst() {
@@ -127,20 +133,11 @@ public class CardCollection implements Iterable<Card>, Cloneable {
 	}
 
 	public void sortByManaCost() {
-		Comparator<Card> manaComparator = new Comparator<Card>() {
-
-			@Override
-			public int compare(Card card1, Card card2) {
-				Integer manaCost1 = card1.getBaseManaCost();
-				Integer manaCost2 = card2.getBaseManaCost();
-				return manaCost1.compareTo(manaCost2);
-			}
-		};
-		cards.sort(manaComparator);
+		Collections.sort(cards, (card1, card2) -> Integer.valueOf(card1.getBaseManaCost()).compareTo(card2.getBaseManaCost()));
 	}
 
 	public void sortByName() {
-		cards.sort((card1, card2) -> card1.getName().compareTo(card2.getName()));
+		Collections.sort(cards, (card1, card2) -> card1.getName().compareTo(card2.getName()));
 	}
 
 	public List<Card> toList() {
