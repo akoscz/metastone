@@ -1,15 +1,35 @@
 apply plugin: 'eclipse'
 
-subprojects {
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
+
+// exclude the android project from the below configuration
+configure(subprojects - project(':android')) {
     repositories {
         mavenCentral()
     }
 
     apply plugin: 'java'
-    sourceCompatibility = 1.8
 
     compileJava {
         options.encoding = 'UTF-8'
         options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+
+    apply plugin: 'me.tatarka.retrolambda'
+
+    // build java projects with JAVA7 using retrolambda
+    retrolambda {
+        jdk System.getenv("JAVA8_HOME")
+        oldJdk System.getenv("JAVA7_HOME")
+        javaVersion JavaVersion.VERSION_1_7
     }
 }
