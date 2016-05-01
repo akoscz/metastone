@@ -3,15 +3,13 @@ package net.demilich.metastone.game.cards;
 import java.nio.file.Paths;
 import java.util.function.Predicate;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.io.FileUtils;
+import net.demilich.metastone.BuildConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,8 +23,7 @@ import net.demilich.metastone.utils.ResourceInputStream;
 public class CardCatalogue {
 
 	private final static CardCollection cards = new CardCollection();
-	private static final String CARDS_FOLDER = File.separator + "cards";
-	private static final String USER_HOME_METASTONE = System.getProperty("user.home") + File.separator + "metastone";
+	private static final String CARDS_FOLDER = "cards";
 	private static Logger logger = LoggerFactory.getLogger(CardCatalogue.class);
 
 	public static void add(Card card) {
@@ -63,6 +60,10 @@ public class CardCatalogue {
 
 	public static CardCollection getHeroes() {
 		return query(card -> card.isCollectible() && card.getCardType() == CardType.HERO);
+	}
+	
+	public static CardCollection getHeroPowers() {
+		return query(card -> card.isCollectible() && card.getCardType() == CardType.HERO_POWER);
 	}
 	
 	public static CardCollection query(DeckFormat deckFormat) {
@@ -128,8 +129,8 @@ public class CardCatalogue {
 		Collection<ResourceInputStream> inputStreams = ResourceLoader.loadJsonInputStreams(CARDS_FOLDER, false);
 
 		// load cards from ~/metastone/cards on the filesystem
-		if (Paths.get(USER_HOME_METASTONE + CARDS_FOLDER).toFile().exists()) {
-			inputStreams.addAll((ResourceLoader.loadJsonInputStreams(USER_HOME_METASTONE + CARDS_FOLDER, true)));
+		if (Paths.get(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER).toFile().exists()) {
+			inputStreams.addAll((ResourceLoader.loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER, true)));
 		}
 
 		Map<String, CardDesc> cardDesc = new HashMap<String, CardDesc>();

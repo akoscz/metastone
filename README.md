@@ -30,22 +30,29 @@ Sure! There is still a lot to do and anybody willing to contribute is welcome
 * NOTE **JDK 1.8 is required!**
 * Clone the repo.  See [https://help.github.com/articles/cloning-a-repository/](https://help.github.com/articles/cloning-a-repository/) for help.
 * Open a terminal / command prompt and nagivate to your to your git repo location
-* Download dependecies and compile: 
-   * Linux/Mac OSX `./gradlew compileJava`
-   * Windows `gradlew.bat compileJava`
 * Run the application from the command line: 
    * Linux/Mac OSX `./gradlew run`
    * Windows `gradlew.bat run`
+   * Note: this will download all dependecies, compile and assemble all modules and then run the app.
+* Download dependecies and compile: 
+   * Linux/Mac OSX `./gradlew compileJava`
+   * Windows `gradlew.bat compileJava`
+   * Note: this will download all dependecies and compile all modules.  Usefull when developing.
 * Get a list of all gradle tasks: 
    * Linux/Mac OSX `./gradlew tasks --all`
    * Windows `gradlew.bat tasks --all`
-* If you want to build from Eclipse, you will need to create the eclipse settings files: 
+* If you want to build from Eclipse, you will need to create the Eclipse settings files: 
    * Linux/Mac OSX `./gradlew eclipse`
    * Windows `gradlew.bat eclipse`
-   * Open Eclipse and choose `Import -> Existing projects into workspace`
-   * Check the Build Path settings in Eclipse and ensure JDK location is correct.
-* If you want to build from IntelliJ:
+   * Open Eclipse and choose `File > Import > General > Existing projects into workspace`
+   * Select the `Search for nested project` checkbox on the `Import Projects` screen.
+   * Change `Eclipse > Preferences > Java > Compiler > Compiler Complience Level` is set to 1.8
+   * Change `Eclipse > Preferences > Java > Compiler > Building > Circular dependencies` from `Error` to `Warning`.  There is a [known bug](https://issues.gradle.org/browse/GRADLE-2200) with importing multi-module gradle projects into Eclipse. The IDE of choice for working with gradle projects is [IntelliJ IDEA](https://www.jetbrains.com/idea/).
+* If you want to build from IntelliJ IDEA:
    * Open a new project `File > Project From Existing Sources`.  Project will be imported from the `build.gradle` files.
+* **NOTE:** When building from an IDE you will need to manually generate the `BuildConfig.java` file, prefereably before you import the project.  Otherwise your IDE will complain about unresolved references to `BuildConfig`.
+   * Linux/Mac OSX `./gradlew compileBuildConfig`
+   * Windows `gradlew.bat compileBuildConfig`
 
 ### Project structure
 * MetaStone is made up of a handfull of source modules.  Here's what the top level structure looks like:
@@ -82,12 +89,12 @@ metastone
 ```
 - Create a new `metastone/cards` folder under your user home directory:
    * Linux/Mac OSX `mkdir -p ~/metastone/cards`
-   * Windows `use Windows File Explorer to create the metastone/cards dir`
-- Any `.json` files you place in your `~/metastone/cards` folder will be parsed and treated like built-in cards.
+   * Windows `use Windows File Explorer to create the ~/Documents/metastone/cards dir`
+- Any `.json` files you place in your `metastone/cards` folder will be parsed and treated like built-in cards.
 - To learn the cards format it is highly recommended that you copy an existing card, change the `filename` and the `id` attribute (**<-- important!**) and make small changes.
 - Make sure to validate that the cards you added are well formed and can be parsed! Run the following command: 
-   - Linux/Mac OSX `./gradlew cards:test -Dtest.single=ValidateCards` 
-   - Windows `gradlew.bat cards:test -Dtest.single=ValidateCards`
+   - Linux/Mac OSX `./gradlew cards:test` 
+   - Windows `gradlew.bat cards:test`
 - Restart MetaStone for new cards to be detected.
 - If you are building out official cards or fixing existing cards, make your changes in `metastone/cards/src/main/resources/cards`.  Then create a [Pull Request](https://help.github.com/articles/using-pull-requests/) into the project master branch.
 - **The card format is subject to change; cards you create now MAY NOT work in future versions**

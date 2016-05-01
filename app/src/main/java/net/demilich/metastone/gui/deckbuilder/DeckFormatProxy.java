@@ -1,6 +1,5 @@
 package net.demilich.metastone.gui.deckbuilder;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,7 +31,7 @@ public class DeckFormatProxy extends Proxy<GameNotification> {
 
 	public static final String NAME = "DeckFormatProxy";
 	
-	private static final String DECK_FORMATS_FOLDER = File.separator + "formats";
+	private static final String DECK_FORMATS_FOLDER = "formats";
 
 	private final List<DeckFormat> deckFormats = new ArrayList<DeckFormat>();
 
