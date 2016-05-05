@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "net.demilich.metastone.android"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,9 @@ dependencies {
     compile project(':game')
     compile project(':cards')
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
     compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+
     testCompile 'junit:junit:4.12'
 }
