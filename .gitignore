@@ -10,3 +10,5 @@ report.log
 build/
 
 local.properties
+
+*.iml
