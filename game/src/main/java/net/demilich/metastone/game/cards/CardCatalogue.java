@@ -1,5 +1,6 @@
 package net.demilich.metastone.game.cards;
 
+import java.io.File;
 import java.nio.file.Paths;
 import java.util.function.Predicate;
 
@@ -17,8 +18,9 @@ import net.demilich.metastone.game.Attribute;
 import net.demilich.metastone.game.decks.DeckFormat;
 import net.demilich.metastone.game.entities.heroes.HeroClass;
 import net.demilich.metastone.game.cards.desc.CardDesc;
-import net.demilich.metastone.utils.ResourceLoader;
+import net.demilich.metastone.utils.IResourceLoader;
 import net.demilich.metastone.utils.ResourceInputStream;
+import net.demilich.metastone.utils.ResourceLoader;
 
 public class CardCatalogue {
 
@@ -126,11 +128,11 @@ public class CardCatalogue {
 	public static void loadCards() throws IOException, URISyntaxException {
 
 		// load cards from cards.jar on the classpath
-		Collection<ResourceInputStream> inputStreams = ResourceLoader.loadJsonInputStreams(CARDS_FOLDER, false);
+		Collection<ResourceInputStream> inputStreams = ResourceLoader.getInstance().loadJsonInputStreams(CARDS_FOLDER, false);
 
 		// load cards from ~/metastone/cards on the filesystem
-		if (Paths.get(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER).toFile().exists()) {
-			inputStreams.addAll((ResourceLoader.loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER, true)));
+		if (new File(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER).exists()) {
+			inputStreams.addAll((ResourceLoader.getInstance().loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER, true)));
 		}
 
 		Map<String, CardDesc> cardDesc = new HashMap<String, CardDesc>();

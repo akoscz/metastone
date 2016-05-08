@@ -13,8 +13,9 @@ import java.util.HashMap;
 
 import net.demilich.metastone.BuildConfig;
 import net.demilich.metastone.trainingmode.TrainingData;
+import net.demilich.metastone.utils.IResourceLoader;
 import net.demilich.metastone.utils.ResourceInputStream;
-import net.demilich.metastone.utils.ResourceLoader;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +23,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import net.demilich.metastone.utils.ResourceLoader;
 import net.demilich.nittygrittymvc.Proxy;
 import net.demilich.metastone.GameNotification;
 import net.demilich.metastone.game.behaviour.threat.FeatureVector;
@@ -60,11 +62,11 @@ public class TrainingProxy extends Proxy<GameNotification> {
 		trainingData.clear();
 
 		// load training from resources jar on the classpath
-		Collection<ResourceInputStream> inputStreams = ResourceLoader.loadJsonInputStreams(TRAINING_FOLDER, false);
+		Collection<ResourceInputStream> inputStreams = ResourceLoader.getInstance().loadJsonInputStreams(TRAINING_FOLDER, false);
 
 		// load cards from ~/metastone/training folder on the filesystem
 		if (Paths.get(BuildConfig.USER_HOME_METASTONE + File.separator + TRAINING_FOLDER).toFile().exists()) {
-			inputStreams.addAll((ResourceLoader.loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + File.separator + TRAINING_FOLDER, true)));
+			inputStreams.addAll((ResourceLoader.getInstance().loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + File.separator + TRAINING_FOLDER, true)));
 		}
 
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();

@@ -1,5 +1,6 @@
 package net.demilich.metastone;
 
+import net.demilich.metastone.utils.ResourceLoader;
 import net.demilich.nittygrittymvc.Facade;
 import net.demilich.nittygrittymvc.interfaces.IFacade;
 import net.demilich.metastone.gui.autoupdate.CheckForUpdateCommand;
@@ -49,6 +50,7 @@ public class ApplicationFacade extends Facade<GameNotification> {
 
 	public ApplicationFacade() {
 		NotificationProxy.init(this);
+		ResourceLoader.init(new ResourceLoader());
 
 		registerCommand(GameNotification.APPLICATION_STARTUP, new ApplicationStartupCommand());
 		registerCommand(GameNotification.START_GAME, new StartGameCommand());

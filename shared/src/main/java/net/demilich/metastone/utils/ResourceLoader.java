@@ -16,12 +16,25 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class ResourceLoader {
-
-    // the number of dirs levels to traverse on the given path
-    private static final int DIR_LEVELS = 5;
+public class ResourceLoader implements IResourceLoader{
 
     private static Logger logger = LoggerFactory.getLogger(ResourceLoader.class);
+
+    private static IResourceLoader INSTANCE;
+
+    public static void init(IResourceLoader resourceLoader) {
+        if(resourceLoader == null) {
+            throw new NullPointerException("ResourceLoader.init(resourceLoader) cannot be initialized with null!");
+        }
+        INSTANCE = resourceLoader;
+    }
+
+    public static IResourceLoader getInstance() {
+        if(INSTANCE == null) {
+            throw new RuntimeException("ResourceLoader must first be initialized!");
+        }
+        return INSTANCE;
+    }
 
     /**
      * Loads all the json files from the given rootDir into a collection of ResourceInputStreams
@@ -31,7 +44,8 @@ public class ResourceLoader {
      * @throws URISyntaxException
      * @throws IOException
      */
-    public static  Collection<ResourceInputStream> loadJsonInputStreams(String rootDir, boolean fromFileSystem) throws URISyntaxException, IOException {
+    @Override
+    public Collection<ResourceInputStream> loadJsonInputStreams(String rootDir, boolean fromFileSystem) throws URISyntaxException, IOException {
         if (rootDir == null) {
             throw new RuntimeException("rootDir cannot be null");
         }
