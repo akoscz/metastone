@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/playButton"
                 android:text="Play"
-                style="@style/MetastoneButtonStyle"/>
+                style="@style/Metastone.ButtonStyle"/>
 
         <Button
                 android:layout_width="match_parent"
@@ -40,21 +40,21 @@
                 android:id="@+id/deckBuilderButton"
                 android:layout_below="@id/playButton"
                 android:text="Deck Builder"
-                style="@style/MetastoneButtonStyle"/>
+                style="@style/Metastone.ButtonStyle"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/simulatorButton"
                 android:layout_below="@id/deckBuilderButton"
                 android:text="Simulator"
-                style="@style/MetastoneButtonStyle"/>
+                style="@style/Metastone.ButtonStyle"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sandboxButton"
                 android:layout_below="@id/simulatorButton"
                 android:text="Sandbox"
-                style="@style/MetastoneButtonStyle"/>
+                style="@style/Metastone.ButtonStyle"/>
 
     </LinearLayout>
 </RelativeLayout>

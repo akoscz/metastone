@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:background="@drawable/panel"
+    tools:context="net.demilich.metastone.android.HeroSelectionActivity">
+
+    <TextView
+        android:id="@+id/hero_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="9dp"
+        tools:text="WARRIOR"
+        style="@style/Metastone.GlowTextStyle"/>
+
+    <ImageView
+        android:id="@+id/hero_portrait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/hero_class"
+        android:layout_marginTop="30dp"
+        tools:src="@drawable/garrosh"/>
+
+    <TextView
+        android:id="@+id/hero_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/hero_portrait"
+        android:textColor="@color/colorPrimary"
+        tools:text="Garosh"
+        style="@style/Metastone.GlowTextStyle"/>
+
+    <Spinner
+        android:id="@+id/behavior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/hero_name"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/boxbg"
+        android:spinnerMode="dropdown"
+        tools:listitem="@layout/metastone_spinner_dropdown_item"/>
+
+    <Spinner
+        android:id="@+id/deck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/behavior"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/boxbg"
+        android:spinnerMode="dropdown"
+        tools:listitem="@layout/metastone_spinner_dropdown_item"/>
+
+    <CheckBox
+        android:id="@+id/hide_cards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/deck"
+        android:layout_marginTop="20dp"
+        android:text="Hide cards"
+        android:textColor="@color/colorPrimary"
+        style="@style/Metastone.GlowTextStyle"/>
+
+</RelativeLayout>
