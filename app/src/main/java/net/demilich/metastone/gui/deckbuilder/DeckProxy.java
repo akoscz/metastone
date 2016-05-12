@@ -79,11 +79,11 @@ public class DeckProxy extends Proxy<GameNotification> {
 	public void deleteDeck(Deck deck) {
 		decks.remove(deck);
 		logger.debug("Trying to delete deck '{}' contained in file '{}'...", deck.getName(), deck.getFilename());
-		Path path = Paths.get(DeckCatalogue.DECKS_FOLDER + deck.getFilename());
+		Path path = Paths.get(BuildConfig.USER_HOME_METASTONE + File.separator + DeckCatalogue.DECKS_FOLDER + File.separator + deck.getFilename());
 		try {
 		    Files.delete(path);
 		} catch (NoSuchFileException x) {
-			logger.error("Could not delete deck '{}' as the filename '{}' is not a valid file", deck.getName(), deck.getFilename());
+			logger.error("Could not delete deck '{}' as the filename '{}' does not exist", deck.getName(), path);
 			return;
 		} catch (IOException e) {
 			logger.error(e.getMessage());
@@ -97,6 +97,10 @@ public class DeckProxy extends Proxy<GameNotification> {
 
 	public void loadDecks() throws IOException, URISyntaxException {
 		decks.clear();
+
+		// ensure that decks have been copied into the USER_HOME_METASTONE/decks folder
+		DeckCatalogue.copyDecksFromJar();
+
 		DeckCatalogue.loadDecks();
 		decks.addAll(DeckCatalogue.getAllDecks());
 	}
