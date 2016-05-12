@@ -149,11 +149,11 @@ public class DeckCatalogue {
         return null;
     }
 
-    public static Collection<Deck> getAllDecks() {
+    public static List<Deck> getAllDecks() {
         return new ArrayList<>(deckList);
     }
 
-    public static Collection<DeckFormat> getDeckFormats() {
+    public static List<DeckFormat> getDeckFormats() {
         return new ArrayList<>(deckFormats);
     }
 
