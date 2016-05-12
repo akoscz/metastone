@@ -10,13 +10,10 @@ import net.demilich.metastone.utils.ResourceInputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class AssetResourceLoader implements IResourceLoader {
 
@@ -27,17 +24,15 @@ public class AssetResourceLoader implements IResourceLoader {
         mContext = context;
     }
 
-    private List<String> getJsonFiles (AssetManager mgr, String path, int level) {
+    private List<String> getJsonFiles (AssetManager assetManager, String path, int level) {
 
         if(level >= DIR_LEVELS) {
             return Collections.EMPTY_LIST;
         }
 
         List<String> filelist = new ArrayList<>();
-        Log.v(TAG,"enter displayFiles("+path+")");
         try {
-            String list[] = mgr.list(path);
-            Log.v(TAG,"L"+level+": list:"+ Arrays.asList(list));
+            String list[] = assetManager.list(path);
             if (list != null) {
                 String f;
                 for (int i = 0; i < list.length; ++i) {
@@ -45,12 +40,12 @@ public class AssetResourceLoader implements IResourceLoader {
                     if (f.endsWith(".json")) {
                         filelist.add(path + "/" + f);
                     } else {
-                        filelist.addAll(getJsonFiles(mgr, path + "/" + f, level + 1));
+                        filelist.addAll(getJsonFiles(assetManager, path + "/" + f, level + 1));
                     }
                 }
             }
         } catch (IOException e) {
-            Log.v(TAG,"List error: can't list" + path);
+            Log.v(TAG,"List error: can't list " + path);
         }
 
         return filelist;
@@ -73,6 +68,5 @@ public class AssetResourceLoader implements IResourceLoader {
             })
             .filter(i -> i != null)
             .collect(Collectors.toList());
-
     }
 }
