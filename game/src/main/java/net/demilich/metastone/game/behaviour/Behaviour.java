@@ -17,4 +17,8 @@ public abstract class Behaviour implements IBehaviour {
 	public void onGameOver(GameContext context, int playerId, int winningPlayerId) {
 	}
 
+	@Override
+	public String toString() {
+		return getName();
+	}
 }

@@ -85,4 +85,8 @@ public class PlayerConfig {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "PlayerConfig { Name: '" + name + "', Behavior: '" + behaviour + "', Deck: '" + deck + "', HideCards: '" + hideCards + "' }";
+	}
 }
