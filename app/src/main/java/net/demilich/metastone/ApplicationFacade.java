@@ -1,6 +1,7 @@
 package net.demilich.metastone;
 
 import net.demilich.metastone.utils.ResourceLoader;
+import net.demilich.metastone.utils.UserHomeMetastone;
 import net.demilich.nittygrittymvc.Facade;
 import net.demilich.nittygrittymvc.interfaces.IFacade;
 import net.demilich.metastone.gui.autoupdate.CheckForUpdateCommand;
@@ -50,7 +51,10 @@ public class ApplicationFacade extends Facade<GameNotification> {
 
 	public ApplicationFacade() {
 		NotificationProxy.init(this);
+		// initialize with the default java ResourceLoader
 		ResourceLoader.init(new ResourceLoader());
+		// initialize with the default java desktop USER_HOME_METASTONE path
+		UserHomeMetastone.init(BuildConfig.USER_HOME_METASTONE);
 
 		registerCommand(GameNotification.APPLICATION_STARTUP, new ApplicationStartupCommand());
 		registerCommand(GameNotification.START_GAME, new StartGameCommand());

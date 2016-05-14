@@ -19,7 +19,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class ResourceLoader implements IResourceLoader{
+public class ResourceLoader implements IResourceLoader {
 
     private static Logger logger = LoggerFactory.getLogger(ResourceLoader.class);
 
@@ -90,7 +90,7 @@ public class ResourceLoader implements IResourceLoader{
      * @throws URISyntaxException
      * @throws IOException
      */
-    private static PathReference getPathFromResources(String sourceDir) throws URISyntaxException, IOException {
+    private PathReference getPathFromResources(String sourceDir) throws URISyntaxException, IOException {
         URI uri;
         try {
             uri = Object.class.getResource("/" + sourceDir).toURI();
@@ -124,7 +124,7 @@ public class ResourceLoader implements IResourceLoader{
      * @throws URISyntaxException
      * @throws IOException
      */
-    public static void copyFromResources(final String sourceDir, final String targetdir) throws URISyntaxException, IOException {
+    public void copyFromResources(final String sourceDir, final String targetdir) throws URISyntaxException, IOException {
 
         ClassLoader cl = ClassLoader.getSystemClassLoader();
         URL[] urls = ((URLClassLoader)cl).getURLs();

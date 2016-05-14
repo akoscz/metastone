@@ -97,10 +97,6 @@ public class DeckProxy extends Proxy<GameNotification> {
 
 	public void loadDecks() throws IOException, URISyntaxException {
 		decks.clear();
-
-		// ensure that decks have been copied into the USER_HOME_METASTONE/decks folder
-		DeckCatalogue.copyDecksFromJar();
-
 		DeckCatalogue.loadDecks();
 		decks.addAll(DeckCatalogue.getAllDecks());
 	}

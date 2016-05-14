@@ -11,6 +11,7 @@ import net.demilich.metastone.game.cards.CardSet;
 import net.demilich.metastone.game.entities.heroes.HeroClass;
 import net.demilich.metastone.utils.ResourceInputStream;
 import net.demilich.metastone.utils.ResourceLoader;
+import net.demilich.metastone.utils.UserHomeMetastone;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,6 +64,7 @@ public class DeckCatalogue {
             deckFormat = parseStandardDeckFormat(map);
             deckFormat.setName(deckName);
             deckFormat.setFilename(resourceInputStream.fileName);
+            logger.debug("Adding DeckFormat '{}' to DeckCatalogue", deckFormat);
             deckFormats.add(deckFormat);
         }
     }
@@ -82,12 +84,15 @@ public class DeckCatalogue {
     }
 
     public static void loadDecks() throws IOException, URISyntaxException {
+        // ensure that decks have been copied into the USER_HOME_METASTONE/decks folder
+        DeckCatalogue.copyDecksFromJar();
+
         // load decks from ~/metastone/decks on the filesystem
-        if (new File((BuildConfig.USER_HOME_METASTONE + File.separator + DECKS_FOLDER)).exists()) {
-            loadStandardDecks(ResourceLoader.getInstance().loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + File.separator + DECKS_FOLDER, true),
+        if (new File((UserHomeMetastone.getPath() + File.separator + DECKS_FOLDER)).exists()) {
+            loadStandardDecks(ResourceLoader.getInstance().loadJsonInputStreams(UserHomeMetastone.getPath() + File.separator + DECKS_FOLDER, true),
                     new GsonBuilder().setPrettyPrinting().create());
 
-            loadMetaDecks(ResourceLoader.getInstance().loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + File.separator + DECKS_FOLDER, true),
+            loadMetaDecks(ResourceLoader.getInstance().loadJsonInputStreams(UserHomeMetastone.getPath() + File.separator + DECKS_FOLDER, true),
                     new GsonBuilder().setPrettyPrinting().create());
         }
     }
@@ -109,6 +114,7 @@ public class DeckCatalogue {
             }
             deck.setName(deckName);
             deck.setFilename(resourceInputStream.fileName);
+            logger.debug("Adding [{} '{}' meta:{}] to DeckCatalogue", deck.getHeroClass(), deck.getName(), deck.isMetaDeck());
             deckList.add(deck);
         }
     }
@@ -134,6 +140,7 @@ public class DeckCatalogue {
             }
             deck.setName(deckName);
             deck.setFilename(resourceInputStream.fileName);
+            logger.debug("Adding [{} '{}' meta:{}] to DeckCatalogue", deck.getHeroClass(), deck.getName(), deck.isMetaDeck());
             deckList.add(deck);
         }
     }
@@ -194,7 +201,7 @@ public class DeckCatalogue {
         Properties prop = new Properties();
         InputStream input = null;
         FileOutputStream output = null;
-        String propertiesFilePath = BuildConfig.USER_HOME_METASTONE + File.separator + "metastone.properties";
+        String propertiesFilePath = UserHomeMetastone.getPath() + File.separator + "metastone.properties";
         try {
             File propertiesFile = new File(propertiesFilePath);
             if (!propertiesFile.exists()) {
@@ -207,7 +214,7 @@ public class DeckCatalogue {
 
             // if we have not copied decks to the USER_HOME_METASTONE decks folder, then do so now
             if (!Boolean.parseBoolean(prop.getProperty(DECKS_COPIED_PROPERTY))) {
-                ResourceLoader.copyFromResources(DECKS_FOLDER, BuildConfig.USER_HOME_METASTONE + File.separator + DECKS_FOLDER);
+                ResourceLoader.getInstance().copyFromResources(DECKS_FOLDER, UserHomeMetastone.getPath() + File.separator + DECKS_FOLDER);
 
                 output = new FileOutputStream(propertiesFile);
                 // set a property to indicate that we have copied decks

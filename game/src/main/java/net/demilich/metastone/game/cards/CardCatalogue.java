@@ -21,6 +21,7 @@ import net.demilich.metastone.game.cards.desc.CardDesc;
 import net.demilich.metastone.utils.IResourceLoader;
 import net.demilich.metastone.utils.ResourceInputStream;
 import net.demilich.metastone.utils.ResourceLoader;
+import net.demilich.metastone.utils.UserHomeMetastone;
 
 public class CardCatalogue {
 
@@ -131,8 +132,8 @@ public class CardCatalogue {
 		Collection<ResourceInputStream> inputStreams = ResourceLoader.getInstance().loadJsonInputStreams(CARDS_FOLDER, false);
 
 		// load cards from ~/metastone/cards on the filesystem
-		if (new File(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER).exists()) {
-			inputStreams.addAll((ResourceLoader.getInstance().loadJsonInputStreams(BuildConfig.USER_HOME_METASTONE + CARDS_FOLDER, true)));
+		if (new File(UserHomeMetastone.getPath() + File.separator + CARDS_FOLDER).exists()) {
+			inputStreams.addAll((ResourceLoader.getInstance().loadJsonInputStreams(UserHomeMetastone.getPath() + File.separator + CARDS_FOLDER, true)));
 		}
 
 		Map<String, CardDesc> cardDesc = new HashMap<String, CardDesc>();

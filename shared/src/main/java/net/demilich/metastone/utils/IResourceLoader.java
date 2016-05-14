@@ -9,4 +9,6 @@ public interface IResourceLoader {
     int DIR_LEVELS = 5;
 
     Collection<ResourceInputStream> loadJsonInputStreams(String rootDir, boolean fromFileSystem) throws URISyntaxException, IOException;
+
+    void copyFromResources(final String sourceDir, final String targetdir) throws URISyntaxException, IOException;
 }
