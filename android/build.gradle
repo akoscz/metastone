@@ -20,11 +20,11 @@ android {
     buildToolsVersion '24.0.0-rc3'
 
     defaultConfig {
-        applicationId "net.demilich.metastone.android"
+        applicationId 'net.demilich.metastone.android'
         minSdkVersion 'N'
         targetSdkVersion 'N'
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
