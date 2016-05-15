@@ -9,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -36,6 +35,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import pl.droidsonroids.gif.GifImageView;
 
 public class HeroSelectionPagerAdapter extends PagerAdapter {
 
@@ -203,7 +203,7 @@ public class HeroSelectionPagerAdapter extends PagerAdapter {
 
     static final class ViewHolder {
         @BindView(R.id.hero_class) TextView heroClass;
-        @BindView(R.id.hero_portrait) ImageView heroPortrait;
+        @BindView(R.id.hero_portrait) GifImageView heroPortrait;
         @BindView(R.id.hero_name) TextView heroName;
         @BindView(R.id.behavior) Spinner behavior;
         @BindView(R.id.deck) Spinner deck;
@@ -225,31 +225,31 @@ public class HeroSelectionPagerAdapter extends PagerAdapter {
 
             switch (heroClass) {
                 case DRUID:
-                    portraitResourceId = R.drawable.malfurion;
+                    portraitResourceId = R.drawable.malfurion_animated;
                     break;
                 case HUNTER:
-                    portraitResourceId = R.drawable.rexxar;
+                    portraitResourceId = R.drawable.rexxar_animated;
                     break;
                 case MAGE:
-                    portraitResourceId = R.drawable.jaina;
+                    portraitResourceId = R.drawable.jaina_animated;
                     break;
                 case PALADIN:
-                    portraitResourceId = R.drawable.uther;
+                    portraitResourceId = R.drawable.uther_animated;
                     break;
                 case PRIEST:
-                    portraitResourceId = R.drawable.anduin;
+                    portraitResourceId = R.drawable.anduin_animated;
                     break;
                 case ROGUE:
-                    portraitResourceId = R.drawable.valeera;
+                    portraitResourceId = R.drawable.valeera_animated;
                     break;
                 case SHAMAN:
-                    portraitResourceId = R.drawable.thrall;
+                    portraitResourceId = R.drawable.thrall_animated;
                     break;
                 case WARLOCK:
-                    portraitResourceId = R.drawable.guldan;
+                    portraitResourceId = R.drawable.guldan_animated;
                     break;
                 case WARRIOR:
-                    portraitResourceId = R.drawable.garrosh;
+                    portraitResourceId = R.drawable.garrosh_animated;
                     break;
                 case ANY:
                 case DECK_COLLECTION:

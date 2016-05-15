@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MetaStone</string>
+    <string name="hide_cards">Hide cards</string>
+    <string name="play">Play</string>
+    <string name="deck_builder">Deck Builder</string>
+    <string name="simulator">Simulator</string>
+    <string name="sandbox">Sandbox</string>
 </resources>

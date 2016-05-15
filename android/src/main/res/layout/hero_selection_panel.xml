@@ -10,28 +10,26 @@
         android:id="@+id/hero_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:textSize="9dp"
         tools:text="WARRIOR"
-        style="@style/Metastone.GlowTextStyle"/>
+        style="@style/Metastone.GlowTextStyle.Dark"/>
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/hero_portrait"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/hero_class"
-        android:layout_marginTop="30dp"
-        tools:src="@drawable/garrosh"/>
+        android:layout_marginTop="12dp"
+        tools:src="@drawable/garrosh_animated"/>
 
     <TextView
         android:id="@+id/hero_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/hero_portrait"
         android:textColor="@color/colorPrimary"
@@ -44,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/hero_name"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/boxbg"
         android:spinnerMode="dropdown"
         tools:listitem="@layout/metastone_spinner_dropdown_item"/>
@@ -55,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/behavior"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/boxbg"
         android:spinnerMode="dropdown"
         tools:listitem="@layout/metastone_spinner_dropdown_item"/>
@@ -65,9 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/deck"
-        android:layout_marginTop="20dp"
-        android:text="Hide cards"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/hide_cards"
         android:textColor="@color/colorPrimary"
         style="@style/Metastone.GlowTextStyle"/>
 

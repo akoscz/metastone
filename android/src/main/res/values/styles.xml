@@ -29,17 +29,35 @@
 
     <style name="Metastone.GlowTextStyle" parent="Metastone.TextStyle">
         <item name="android:shadowColor">@color/colorAccent</item>
-        <item name="android:shadowDx">2</item>
-        <item name="android:shadowDy">2</item>
-        <item name="android:shadowRadius">8</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">12</item>
+    </style>
+
+    <style name="Metastone.GlowTextStyle.Dark" parent="Metastone.GlowTextStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:shadowColor">@android:color/white</item>
+    </style>
+
+    <style name="Metastone.GlowTextStyle.Light" parent="Metastone.GlowTextStyle">
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="Metastone.SpinnerItemStyle" parent="Metastone.GlowTextStyle">
         <item name="android:textStyle">bold</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingLeft">18dp</item>
+        <item name="android:paddingRight">18dp</item>
         <item name="android:popupBackground">@null</item>
         <item name="android:background">@drawable/metastone_button</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Metastone.SpinnerItemStyle.Dark" parent="Metastone.SpinnerItemStyle">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="Metastone.SpinnerItemStyle.Light" parent="Metastone.SpinnerItemStyle">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="Metastone.SpinnerDropDownItemStyle" parent="Metastone.GlowTextStyle">
@@ -48,6 +66,14 @@
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingRight">8dp</item>
         <item name="android:background">@drawable/metastone_button2</item>
+    </style>
+
+    <style name="Metastone.SpinnerDropDownItemStyle.Dark" parent="Metastone.SpinnerDropDownItemStyle">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="Metastone.SpinnerDropDownItemStyle.Light" parent="Metastone.SpinnerDropDownItemStyle">
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>
