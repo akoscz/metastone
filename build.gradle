@@ -1,4 +1,5 @@
-subprojects {
+// exclude the android project from the below configuration
+configure(subprojects - project(':android')) {
     repositories {
         mavenCentral()
     }
