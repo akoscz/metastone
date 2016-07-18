@@ -22,6 +22,8 @@ public class MetaStone extends Application {
 	private static Logger logger = LoggerFactory.getLogger(MetaStone.class);
 
 	public static void main(String[] args) {
+		MetastoneAnalytics.registerDefaultUncaughtExceptionHandler();
+
 		//DevCardTools.formatJsons();
 
 		try {

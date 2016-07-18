@@ -2,6 +2,7 @@ package net.demilich.metastone.analytics;
 
 import com.akoscz.googleanalytics.GoogleAnalytics;
 import com.akoscz.googleanalytics.GoogleAnalyticsConfig;
+import com.akoscz.googleanalytics.util.ExceptionParser;
 import com.akoscz.googleanalytics.util.UserAgent;
 import net.demilich.metastone.BuildConfig;
 import net.demilich.metastone.utils.MetastoneProperties;
@@ -24,6 +25,7 @@ public class MetastoneAnalytics {
     public  static final String ANALYTICS_OPT_OUT_PROPERTY = "analytics.optout";
     private static Logger logger = LoggerFactory.getLogger(MetastoneAnalytics.class);
     private static boolean DISABLED = false; // analytics tracking is ON by default
+    private static ExceptionParser exceptionParser;
 
     private final GoogleAnalytics.Tracker analyticsTracker;
 
@@ -78,6 +80,41 @@ public class MetastoneAnalytics {
     public static void enable() {
         DISABLED = false;
         logger.info("Enabling Analytics");
+    }
+
+
+    /**
+     * Register a Default UncaughtExceptionHandler which will report uncaught exception to Google Analytics.
+     */
+    public static void registerDefaultUncaughtExceptionHandler() {
+        GoogleAnalytics.registerDefaultUncaughtExceptionHandler("net.demilich.metastone");
+    }
+
+    /**
+     * Register an exception event.
+     *  type                 :   exception
+     *  exceptionDescription :   [parameter] generated from Throwable param
+     *  isExceptionFatal     :   [parameter] True = "1", False = "0"
+     *
+     * If fatal is True, the send network operation is performed on the same thread this method was invoked from.
+     * If fatal is False, the send network operation is performed on a background thread.
+     *
+     * @param throwable The Throwable representing the exception that was thrown.
+     * @param fatal True if this exception lead to a fatal crash.  False if the application can recover from the exception.
+     */
+    public static void registerException(Throwable throwable, boolean fatal) {
+        if (exceptionParser == null) {
+            exceptionParser = new ExceptionParser("net.demilich.metastone");
+        }
+
+        INSTANCE.analyticsTracker
+                .type(GoogleAnalytics.HitType.exception)
+                .applicationVersion(BuildConfig.VERSION)
+                .exceptionDescription(exceptionParser.getDescription(Thread.currentThread().getName(), throwable))
+                .isExceptionFatal(fatal)
+                .build()
+                // if we have a fatal exception, we perform the network operation synchronously on the current thread
+                .send(!fatal);
     }
 
     /**

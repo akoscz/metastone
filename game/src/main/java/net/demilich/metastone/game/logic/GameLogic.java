@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ThreadLocalRandom;
 
+import net.demilich.metastone.analytics.MetastoneAnalytics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -286,7 +287,7 @@ public class GameLogic implements Cloneable {
 				logger.error("Error while playing card: " + source.getName());
 			}
 			logger.error("Error while casting spell: " + spellDesc);
-			panicDump();
+			panicDump(e, false);
 			e.printStackTrace();
 		}
 
@@ -324,8 +325,9 @@ public class GameLogic implements Cloneable {
 	public void checkForDeadEntities(int i) {
 		// sanity check, this method should never call itself that often
 		if (i > 20) {
-			panicDump();
-			throw new RuntimeException("Infinite death checking loop");
+			RuntimeException exception = new RuntimeException("Infinite death checking loop");
+			panicDump(exception, true);
+			throw exception;
 		}
 
 		List<Actor> destroyList = new ArrayList<>();
@@ -1160,11 +1162,12 @@ public class GameLogic implements Cloneable {
 		}
 	}
 
-	public void panicDump() {
+	public void panicDump(Throwable throwable, boolean fatal) {
 		logger.error("=========PANIC DUMP=========");
 		for (String entry : debugHistory) {
 			logger.error(entry);
 		}
+		MetastoneAnalytics.registerException(throwable, fatal);
 	}
 
 	public void performGameAction(int playerId, GameAction action) {

@@ -158,7 +158,7 @@ public class GameContext implements Cloneable, IDisposable {
 			triggerManager.fireGameEvent(gameEvent);	
 		} catch(Exception e) {
 			logger.error("Error while processing gameEvent {}", gameEvent);
-			logic.panicDump();
+			logic.panicDump(e, false);
 			throw e;
 		}
 		

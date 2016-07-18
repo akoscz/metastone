@@ -46,7 +46,7 @@ public abstract class PlayCardAction extends GameAction {
 
 		} catch (Exception e) {
 			logger.error("ERROR while playing card " + card + " reference: " + cardReference);
-			context.getLogic().panicDump();
+			context.getLogic().panicDump(e, true);
 			e.printStackTrace();
 			System.exit(-1);
 			throw e;

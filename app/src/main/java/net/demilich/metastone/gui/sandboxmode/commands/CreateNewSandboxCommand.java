@@ -1,5 +1,6 @@
 package net.demilich.metastone.gui.sandboxmode.commands;
 
+import com.akoscz.googleanalytics.GoogleAnalytics;
 import net.demilich.nittygrittymvc.SimpleCommand;
 import net.demilich.nittygrittymvc.interfaces.INotification;
 import net.demilich.metastone.GameNotification;
@@ -49,6 +50,7 @@ public class CreateNewSandboxCommand extends SimpleCommand<GameNotification> {
 		});
 		thread.setDaemon(true);
 		thread.setUncaughtExceptionHandler((t, exception) -> exception.printStackTrace());
+		GoogleAnalytics.registerThreadUncaughtExceptionHandler(thread, "net.demilich.metastone");
 		thread.start();
 	}
 
