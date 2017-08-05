@@ -1,5 +1,4 @@
 {
-	"id": "minion_archmage",
 	"name": "Archmage",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -12,6 +11,6 @@
 		"SPELL_DAMAGE": 1
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

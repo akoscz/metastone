@@ -1,5 +1,4 @@
 {
-	"id": "spell_avenging_wrath",
 	"name": "Avenging Wrath",
 	"baseManaCost": 6,
 	"type": "SPELL",
@@ -13,6 +12,7 @@
 		"value": 1,
 		"howMany": 8
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

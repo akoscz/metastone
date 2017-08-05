@@ -1,5 +1,4 @@
 {
-	"id": "spell_consecration",
 	"name": "Consecration",
 	"baseManaCost": 4,
 	"type": "SPELL",
@@ -13,6 +12,6 @@
 		"value": 2
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

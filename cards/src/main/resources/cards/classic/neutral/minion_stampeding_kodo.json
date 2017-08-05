@@ -1,5 +1,4 @@
 {
-	"id": "minion_stampeding_kodo",
 	"name": "Stampeding Kodo",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -21,8 +20,7 @@
 				"operation": "LESS_OR_EQUAL",
 				"value": 2
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

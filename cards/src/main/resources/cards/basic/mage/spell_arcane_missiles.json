@@ -1,5 +1,4 @@
 {
-	"id": "spell_arcane_missiles",
 	"name": "Arcane Missiles",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -13,6 +12,7 @@
 		"value": 1,
 		"howMany": 3
 	},
-	"set": "CLASSIC",
+	"collectible": true,
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

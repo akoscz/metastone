@@ -1,5 +1,4 @@
 {
-	"id": "minion_gormok_the_impaler",
 	"name": "Gormok the Impaler",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -19,8 +18,7 @@
 			"targetPlayer": "SELF",
 			"operation": "GREATER",
 			"value": 4
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

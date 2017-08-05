@@ -1,5 +1,4 @@
 {
-	"id": "minion_lil_exorcist",
 	"name": "Lil' Exorcist",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -17,8 +16,7 @@
 				"target": "ENEMY_MINIONS",
 				"attribute": "DEATHRATTLES"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true,

@@ -1,5 +1,4 @@
 {
-	"id": "spell_infest",
 	"name": "Infest",
 	"baseManaCost": 3,
 	"type": "SPELL",
@@ -11,7 +10,7 @@
 		"class": "AddDeathrattleSpell",
 		"target": "FRIENDLY_MINIONS",
 		"spell": {
-			"class": "ReceiveRandomCollectibleCardSpell",
+			"class": "ReceiveCardSpell",
 			"cardFilter": {
 				"class": "RaceFilter",
 				"race": "BEAST"

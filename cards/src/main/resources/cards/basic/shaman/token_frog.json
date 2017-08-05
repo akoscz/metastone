@@ -1,5 +1,4 @@
 {
-	"id": "token_frog",
 	"name": "Frog",
 	"baseManaCost": 0,
 	"type": "MINION",
@@ -13,6 +12,6 @@
 		"TAUNT": true
 	},
 	"collectible": false,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

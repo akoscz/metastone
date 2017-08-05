@@ -1,5 +1,4 @@
 {
-	"id": "minion_ram_wrangler",
 	"name": "Ram Wrangler",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -18,10 +17,12 @@
 			}
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "BEAST"
-		},
-		"resolvedLate": false
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "BEAST"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

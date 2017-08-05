@@ -1,5 +1,4 @@
 {
-	"id": "minion_tundra_rhino",
 	"name": "Tundra Rhino",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -22,6 +21,6 @@
 		"CHARGE": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

@@ -1,5 +1,4 @@
 {
-	"id": "spell_ancient_curse",
 	"name": "Ancient Curse",
 	"baseManaCost": 0,
 	"type": "SPELL",
@@ -21,7 +20,8 @@
 				{
 					"class": "DamageSpell",
 					"target": "FRIENDLY_HERO",
-					"value": 7
+					"value": 7,
+					"ignoreSpellDamage": true
 				},
 				{
 					"class": "RemoveCardSpell",

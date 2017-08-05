@@ -1,5 +1,4 @@
 {
-	"id": "spell_lightning_bolt",
 	"name": "Lightning Bolt",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -14,6 +13,7 @@
 	"attributes": {
 		"OVERLOAD": 1
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

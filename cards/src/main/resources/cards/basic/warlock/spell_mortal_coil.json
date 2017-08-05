@@ -1,5 +1,4 @@
 {
-	"id": "spell_mortal_coil",
 	"name": "Mortal Coil",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -22,6 +21,6 @@
 		}
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

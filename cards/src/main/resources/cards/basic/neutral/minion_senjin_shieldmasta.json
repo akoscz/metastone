@@ -1,5 +1,4 @@
 {
-	"id": "minion_senjin_shieldmasta",
 	"name": "Sen'jin Shieldmasta",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -11,6 +10,7 @@
 	"attributes": {
 		"TAUNT": true
 	},
-	"set": "CLASSIC",
+	"collectible": true,
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

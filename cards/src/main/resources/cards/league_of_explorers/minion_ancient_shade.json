@@ -1,5 +1,4 @@
 {
-	"id": "minion_ancient_shade",
 	"name": "Ancient Shade",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 		"spell": {
 			"class": "ShuffleToDeckSpell",
 			"card": "spell_ancient_curse"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

@@ -1,7 +1,6 @@
 {
-	"id": "spell_execute",
 	"name": "Execute",
-	"baseManaCost": 1,
+	"baseManaCost": 2,
 	"type": "SPELL",
 	"heroClass": "WARRIOR",
 	"rarity": "FREE",
@@ -14,6 +13,6 @@
 		}
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

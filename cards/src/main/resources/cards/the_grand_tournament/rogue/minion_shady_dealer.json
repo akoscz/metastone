@@ -1,5 +1,4 @@
 {
-	"id": "minion_shady_dealer",
 	"name": "Shady Dealer",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -16,10 +15,12 @@
 			"hpBonus": 1
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "PIRATE"
-		},
-		"resolvedLate": false
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "PIRATE"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

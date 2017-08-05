@@ -1,5 +1,4 @@
 {
-	"id": "spell_soul_of_the_forest",
 	"name": "Soul of the Forest",
 	"baseManaCost": 4,
 	"type": "SPELL",
@@ -15,6 +14,7 @@
 			"card": "token_treant"
 		}
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

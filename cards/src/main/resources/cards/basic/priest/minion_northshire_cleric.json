@@ -1,5 +1,4 @@
 {
-	"id": "minion_northshire_cleric",
 	"name": "Northshire Cleric",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -19,6 +18,6 @@
 		}
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

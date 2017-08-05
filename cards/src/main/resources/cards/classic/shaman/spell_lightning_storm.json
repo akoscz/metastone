@@ -1,5 +1,4 @@
 {
-	"id": "spell_lightning_storm",
 	"name": "Lightning Storm",
 	"baseManaCost": 3,
 	"type": "SPELL",
@@ -19,6 +18,7 @@
 	"attributes": {
 		"OVERLOAD": 2
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

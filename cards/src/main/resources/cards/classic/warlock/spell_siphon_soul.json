@@ -1,5 +1,4 @@
 {
-	"id": "spell_siphon_soul",
 	"name": "Siphon Soul",
 	"baseManaCost": 6,
 	"type": "SPELL",
@@ -20,6 +19,7 @@
 			}
 		]
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

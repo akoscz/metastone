@@ -12,12 +12,13 @@ import net.demilich.metastone.game.cards.desc.MinionCardDesc;
 import net.demilich.metastone.game.entities.minions.Minion;
 import net.demilich.metastone.game.entities.minions.Race;
 import net.demilich.metastone.game.spells.desc.BattlecryDesc;
+import net.demilich.metastone.game.spells.desc.trigger.TriggerDesc;
 
-public class MinionCard extends Card {
+public class MinionCard extends SummonCard {
 
 	private static final Set<Attribute> ignoredAttributes = new HashSet<Attribute>(
-			Arrays.asList(new Attribute[] { Attribute.PASSIVE_TRIGGER, Attribute.MANA_COST_MODIFIER, Attribute.BASE_ATTACK,
-					Attribute.BASE_HP, Attribute.SECRET, Attribute.CHOOSE_ONE, Attribute.BATTLECRY }));
+			Arrays.asList(new Attribute[] { Attribute.PASSIVE_TRIGGER, Attribute.DECK_TRIGGER, Attribute.MANA_COST_MODIFIER, Attribute.BASE_ATTACK,
+					Attribute.BASE_HP, Attribute.SECRET, Attribute.QUEST, Attribute.CHOOSE_ONE, Attribute.BATTLECRY, Attribute.COMBO }));
 
 	private final MinionCardDesc desc;
 
@@ -49,7 +50,6 @@ public class MinionCard extends Card {
 		BattlecryDesc battlecry = desc.battlecry;
 		if (battlecry != null) {
 			BattlecryAction battlecryAction = BattlecryAction.createBattlecry(battlecry.spell, battlecry.getTargetSelection());
-			battlecryAction.setResolvedLate(battlecry.resolvedLate);
 			if (battlecry.condition != null) {
 				battlecryAction.setCondition(battlecry.condition.create());
 			}
@@ -62,9 +62,15 @@ public class MinionCard extends Card {
 			minion.addDeathrattle(desc.deathrattle);
 		}
 		if (desc.trigger != null) {
-			minion.setSpellTrigger(desc.trigger.create());
-		} else if (desc.aura != null) {
-			minion.setSpellTrigger(desc.aura.create());
+			minion.addSpellTrigger(desc.trigger.create());
+		}
+		if (desc.triggers != null) {
+			for (TriggerDesc trigger : desc.triggers) {
+				minion.addSpellTrigger(trigger.create());
+			}
+		}
+		if (desc.aura != null) {
+			minion.addSpellTrigger(desc.aura.create());
 		}
 		if (desc.cardCostModifier != null) {
 			minion.setCardCostModifier(desc.cardCostModifier.create());

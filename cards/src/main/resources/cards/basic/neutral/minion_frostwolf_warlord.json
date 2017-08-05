@@ -1,5 +1,4 @@
 {
-	"id": "minion_frostwolf_warlord",
 	"name": "Frostwolf Warlord",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -17,13 +16,12 @@
 				"class": "EntityCounter",
 				"target": "OTHER_FRIENDLY_MINIONS"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

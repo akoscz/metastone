@@ -24,7 +24,6 @@ public class BattlecryAction extends GameAction {
 	}
 
 	private final SpellDesc spell;
-	private boolean resolvedLate = false;
 	private Condition condition;
 
 	protected BattlecryAction(SpellDesc spell) {
@@ -36,7 +35,7 @@ public class BattlecryAction extends GameAction {
 		if (getCondition() == null) {
 			return true;
 		}
-		return getCondition().isFulfilled(context, player, null);
+		return getCondition().isFulfilled(context, player, null, null);
 	}
 
 	@Override
@@ -57,7 +56,6 @@ public class BattlecryAction extends GameAction {
 	public BattlecryAction clone() {
 		BattlecryAction clone = BattlecryAction.createBattlecry(getSpell(), getTargetRequirement());
 		clone.setActionSuffix(getActionSuffix());
-		clone.setResolvedLate(isResolvedLate());
 		clone.setSource(getSource());
 		return clone;
 	}
@@ -65,7 +63,7 @@ public class BattlecryAction extends GameAction {
 	@Override
 	public void execute(GameContext context, int playerId) {
 		EntityReference target = getSpell().hasPredefinedTarget() ? getSpell().getTarget() : getTargetKey();
-		context.getLogic().castSpell(playerId, getSpell(), getSource(), target, false);
+		context.getLogic().castSpell(playerId, getSpell(), getSource(), target, getTargetRequirement(), false);
 	}
 
 	private Condition getCondition() {
@@ -85,10 +83,6 @@ public class BattlecryAction extends GameAction {
 		return spell;
 	}
 
-	public boolean isResolvedLate() {
-		return resolvedLate;
-	}
-
 	@Override
 	public boolean isSameActionGroup(GameAction anotherAction) {
 		return anotherAction.getActionType() == getActionType();
@@ -102,12 +96,8 @@ public class BattlecryAction extends GameAction {
 		// this.entityFilter = entityFilter;
 	}
 
-	public void setResolvedLate(boolean resolvedLate) {
-		this.resolvedLate = resolvedLate;
-	}
-
 	@Override
 	public String toString() {
-		return String.format("[%s '%s' resolvedLate:%s]", getActionType(), getSpell().getSpellClass().getSimpleName(), resolvedLate);
+		return String.format("[%s '%s']", getActionType(), getSpell().getSpellClass().getSimpleName());
 	}
 }

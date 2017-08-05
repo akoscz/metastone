@@ -1,5 +1,4 @@
 {
-	"id": "minion_abomination",
 	"name": "Abomination",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -17,6 +16,7 @@
 		"DEATHRATTLES": true,
 		"TAUNT": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

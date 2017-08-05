@@ -30,7 +30,7 @@ public class PerformActionCommand extends SimpleCommand<GameNotification> {
 		if (rolledOutActions.isEmpty()) {
 			return;
 		}
-		if (gameAction.getTargetRequirement() != TargetSelection.NONE) {
+		if (gameAction.getTargetRequirement() != TargetSelection.NONE && gameAction.getTargetRequirement() != TargetSelection.AUTO) {
 			ActionGroup actionGroup = new ActionGroup(rolledOutActions.get(0));
 			for (GameAction rolledAction : rolledOutActions) {
 				actionGroup.add(rolledAction);
@@ -47,6 +47,7 @@ public class PerformActionCommand extends SimpleCommand<GameNotification> {
 		SandboxProxy sandboxProxy = (SandboxProxy) getFacade().retrieveProxy(SandboxProxy.NAME);
 		GameContext context = sandboxProxy.getSandbox();
 		Player selectedPlayer = sandboxProxy.getSelectedPlayer();
+		action.setSource(selectedPlayer.getReference());
 
 		context.getLogic().performGameAction(selectedPlayer.getId(), action);
 		sendNotification(GameNotification.UPDATE_SANDBOX_STATE, context);

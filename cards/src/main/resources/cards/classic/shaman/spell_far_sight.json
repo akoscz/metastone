@@ -1,5 +1,4 @@
 {
-	"id": "spell_far_sight",
 	"name": "Far Sight",
 	"baseManaCost": 3,
 	"type": "SPELL",
@@ -11,9 +10,14 @@
 		"class": "DrawCardAndDoSomethingSpell",
 		"value": 1,
 		"spell": {
-			"class": "ModifyAttributeSpell",
-			"attribute": "MANA_COST_MODIFIER",
-			"value": -3
+			"class": "CardCostModifierSpell",
+			"target": "FRIENDLY_PLAYER",
+			"cardCostModifier": {
+				"class": "CardCostModifier",
+				"target": "EVENT_CARD",
+				"operation": "SUBTRACT",
+				"value": 3
+			}
 		}
 	},
 	"collectible": true,

@@ -1,5 +1,4 @@
 {
-	"id": "minion_razorfen_hunter",
 	"name": "Razorfen Hunter",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -13,13 +12,12 @@
 			"class": "SummonSpell",
 			"card": "token_boar",
 			"boardPositionRelative": "RIGHT"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

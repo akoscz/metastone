@@ -1,5 +1,4 @@
 {
-	"id": "minion_shattered_sun_cleric",
 	"name": "Shattered Sun Cleric",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -14,13 +13,12 @@
 			"class": "BuffSpell",
 			"attackBonus": 1,
 			"hpBonus": 1
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

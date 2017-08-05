@@ -1,5 +1,4 @@
 {
-	"id": "minion_wailing_soul",
 	"name": "Wailing Soul",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -12,8 +11,7 @@
 		"spell": {
 			"class": "SilenceSpell",
 			"target": "OTHER_FRIENDLY_MINIONS"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

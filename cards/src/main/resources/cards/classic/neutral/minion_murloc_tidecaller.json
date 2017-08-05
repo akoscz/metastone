@@ -1,5 +1,4 @@
 {
-	"id": "minion_murloc_tidecaller",
 	"name": "Murloc Tidecaller",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -8,11 +7,11 @@
 	"heroClass": "ANY",
 	"rarity": "RARE",
 	"race": "MURLOC",
-	"description": "Whenever a Murloc is summoned, gain +1 Attack.",
+	"description": "Whenever you summon a Murloc, gain +1 Attack.",
 	"trigger": {
 		"eventTrigger": {
 			"class": "MinionSummonedTrigger",
-			"targetPlayer": "BOTH",
+			"targetPlayer": "SELF",
 			"race": "MURLOC"
 		},
 		"spell": {

@@ -1,5 +1,4 @@
 {
-	"id": "minion_bloodsail_corsair",
 	"name": "Bloodsail Corsair",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -14,8 +13,7 @@
 			"class": "ModifyDurabilitySpell",
 			"targetPlayer": "OPPONENT",
 			"value": -1
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

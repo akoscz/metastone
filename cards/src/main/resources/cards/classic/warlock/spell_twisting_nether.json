@@ -1,5 +1,4 @@
 {
-	"id": "spell_twisting_nether",
 	"name": "Twisting Nether",
 	"baseManaCost": 8,
 	"type": "SPELL",
@@ -11,6 +10,7 @@
 		"class": "DestroySpell",
 		"target": "ALL_MINIONS"
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

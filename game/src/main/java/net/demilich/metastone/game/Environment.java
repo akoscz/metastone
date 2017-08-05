@@ -11,5 +11,15 @@ public enum Environment {
 	TRANSFORM_REFERENCE,
 	DAMAGE_STACK,
 	DEBUG,
-	PENDING_CARD
+	PENDING_CARD,
+	EVENT_CARD,
+	CHOOSE_ONE_CARD,
+	LAST_MANA_COST,
+	;
+	
+	public boolean customClone() {
+		return (this == SUMMON_REFERENCE_STACK ||
+				this == EVENT_TARGET_REFERENCE_STACK ||
+				this == DAMAGE_STACK);
+	}
 }

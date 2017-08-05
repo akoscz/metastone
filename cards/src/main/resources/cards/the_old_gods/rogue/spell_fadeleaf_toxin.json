@@ -1,9 +1,8 @@
 {
-	"id": "spell_fadeleaf_toxin",
 	"name": "Fadeleaf Toxin",
 	"baseManaCost": 1,
 	"type": "SPELL",
-	"heroClass": "ANY",
+	"heroClass": "ROGUE",
 	"rarity": "FREE",
 	"description": "Give a friendly minion Stealth until your next turn.",
 	"targetSelection": "FRIENDLY_MINIONS",

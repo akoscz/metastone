@@ -1,5 +1,4 @@
 {
-	"id": "spell_mind_vision",
 	"name": "Mind Vision",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -13,6 +12,6 @@
 		"cardLocation": "HAND"
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

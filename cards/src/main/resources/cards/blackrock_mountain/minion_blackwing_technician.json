@@ -1,5 +1,4 @@
 {
-	"id": "minion_blackwing_technician",
 	"name": "Blackwing Technician",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -18,9 +17,11 @@
 		},
 		"condition": {
 			"class": "HoldsCardCondition",
-			"race": "DRAGON"
-		},
-		"resolvedLate": false
+			"cardFilter": {
+				"class": "CardFilter",
+				"race": "DRAGON"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

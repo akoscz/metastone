@@ -1,5 +1,4 @@
 {
-	"id": "minion_twilight_guardian",
 	"name": "Twilight Guardian",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -26,9 +25,11 @@
 		},
 		"condition": {
 			"class": "HoldsCardCondition",
-			"race": "DRAGON"
-		},
-		"resolvedLate": false
+			"cardFilter": {
+				"class": "CardFilter",
+				"race": "DRAGON"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

@@ -1,5 +1,4 @@
 {
-	"id": "minion_onyxia",
 	"name": "Onyxia",
 	"baseManaCost": 9,
 	"type": "MINION",
@@ -44,8 +43,7 @@
 					"boardPositionRelative": "LEFT"
 				}
 			]
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

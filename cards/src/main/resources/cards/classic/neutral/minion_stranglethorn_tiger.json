@@ -1,5 +1,4 @@
 {
-	"id": "minion_stranglethorn_tiger",
 	"name": "Stranglethorn Tiger",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -12,6 +11,7 @@
 	"attributes": {
 		"STEALTH": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

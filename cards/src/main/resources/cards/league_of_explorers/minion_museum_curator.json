@@ -1,5 +1,4 @@
 {
-	"id": "minion_museum_curator",
 	"name": "Museum Curator",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -21,8 +20,7 @@
 				"attribute": "DEATHRATTLES",
 				"operation": "HAS"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

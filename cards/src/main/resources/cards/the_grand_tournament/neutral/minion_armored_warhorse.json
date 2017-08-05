@@ -1,5 +1,4 @@
 {
-	"id": "minion_armored_warhorse",
 	"name": "Armored Warhorse",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -18,8 +17,7 @@
 				"target": "SELF",
 				"attribute": "CHARGE"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

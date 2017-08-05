@@ -1,5 +1,4 @@
 {
-	"id": "minion_guardian_of_kings",
 	"name": "Guardian of Kings",
 	"baseManaCost": 7,
 	"type": "MINION",
@@ -13,13 +12,12 @@
 			"class": "HealSpell",
 			"target": "FRIENDLY_HERO",
 			"value": 6
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

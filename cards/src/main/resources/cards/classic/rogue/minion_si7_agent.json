@@ -1,5 +1,4 @@
 {
-	"id": "minion_si7_agent",
 	"name": "SI:7 Agent",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -16,8 +15,10 @@
 		},
 		"condition": {
 			"class": "ComboCondition"
-		},
-		"resolvedLate": false
+		}
+	},
+	"attributes": {
+		"COMBO": true
 	},
 	"collectible": true,
 	"set": "CLASSIC",

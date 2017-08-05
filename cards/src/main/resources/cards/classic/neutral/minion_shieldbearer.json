@@ -1,5 +1,4 @@
 {
-	"id": "minion_shieldbearer",
 	"name": "Shieldbearer",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -11,6 +10,7 @@
 	"attributes": {
 		"TAUNT": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

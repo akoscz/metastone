@@ -1,5 +1,4 @@
 {
-	"id": "minion_dragonling_mechanic",
 	"name": "Dragonling Mechanic",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -13,13 +12,12 @@
 			"class": "SummonSpell",
 			"card": "token_mechanical_dragonling",
 			"boardPositionRelative": "RIGHT"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

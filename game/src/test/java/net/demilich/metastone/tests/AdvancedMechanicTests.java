@@ -32,7 +32,6 @@ public class AdvancedMechanicTests extends BasicTests {
 		GameContext context = createContext(HeroClass.DRUID, HeroClass.WARRIOR);
 		Player player = context.getPlayer1();
 		Player opponent = context.getPlayer2();
-		player.getHand().removeAll();
 
 		context.endTurn();
 		TestMinionCard minionCard = new TestMinionCard(1, 4);
@@ -40,20 +39,25 @@ public class AdvancedMechanicTests extends BasicTests {
 		context.endTurn();
 
 		player.getHero().getHeroPower().markUsed();
+		for (Card card : player.getHand().toList()) {
+			context.getLogic().removeCard(player.getId(), card);
+		}
 		Card wrath = CardCatalogue.getCardById("spell_wrath");
 		IChooseOneCard wrathChooseOne = (IChooseOneCard) wrath;
 		context.getLogic().receiveCard(player.getId(), wrath);
 		player.setMana(wrath.getBaseManaCost() + 1);
 		List<GameAction> validActions = context.getLogic().getValidActions(player.getId());
-		Assert.assertEquals(validActions.size(), 2);
 		Assert.assertEquals(player.getHand().getCount(), 1);
+		// player should have 3 valid actions: two from 'Choose One' card and 1 'End Turn'
+		Assert.assertEquals(validActions.size(), 3);
 
 		GameAction playWrath = wrathChooseOne.playOptions()[0];
 		playWrath.setTarget(getSingleMinion(opponent.getMinions()));
 		context.getLogic().performGameAction(player.getId(), playWrath);
 
 		validActions = context.getLogic().getValidActions(player.getId());
-		Assert.assertEquals(validActions.size(), 0);
+		// This time it should just be the 'End Turn'
+		Assert.assertEquals(validActions.size(), 1);
 		Assert.assertEquals(player.getHand().getCount(), 0);
 	}
 
@@ -142,6 +146,16 @@ public class AdvancedMechanicTests extends BasicTests {
 		context.getLogic().performGameAction(priest.getId(), healAction);
 		Assert.assertEquals(defender.getAttack(), BASE_ATTACK);
 		Assert.assertEquals(defender.hasAttribute(Attribute.ENRAGED), false);
+		
+		// attack once more - should enrage again
+		context.getLogic().performGameAction(mage.getId(), attackAction);
+		Assert.assertEquals(defender.getAttack(), BASE_ATTACK + ENRAGE_ATTACK_BONUS);
+		Assert.assertEquals(defender.hasAttribute(Attribute.ENRAGED), true);
+		
+		// attack should be set to 1
+		playCardWithTarget(context, mage, CardCatalogue.getCardById("spell_humility"), defender);
+		Assert.assertEquals(defender.getAttack(), 1);
+		Assert.assertEquals(defender.hasAttribute(Attribute.ENRAGED), true);
 	}
 
 	@Test
@@ -227,7 +241,6 @@ public class AdvancedMechanicTests extends BasicTests {
 
 			@Override
 			public GameAction requestAction(GameContext context, Player player, List<GameAction> validActions) {
-				System.out.println("Action: " + validActions.get(0));
 				return validActions.get(0);
 			}
 

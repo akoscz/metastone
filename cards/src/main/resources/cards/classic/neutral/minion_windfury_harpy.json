@@ -1,5 +1,4 @@
 {
-	"id": "minion_windfury_harpy",
 	"name": "Windfury Harpy",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -11,6 +10,7 @@
 	"attributes": {
 		"WINDFURY": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

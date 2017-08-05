@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import net.demilich.metastone.game.Attribute;
 import net.demilich.metastone.game.PlayerAttribute;
 import net.demilich.metastone.game.actions.ActionType;
+import net.demilich.metastone.game.cards.CardDescType;
 import net.demilich.metastone.game.cards.CardType;
 import net.demilich.metastone.game.cards.Rarity;
 import net.demilich.metastone.game.entities.EntityType;
@@ -17,9 +18,11 @@ import net.demilich.metastone.game.spells.TargetPlayer;
 import net.demilich.metastone.game.spells.desc.SpellDesc;
 import net.demilich.metastone.game.spells.desc.condition.Condition;
 import net.demilich.metastone.game.spells.desc.condition.ConditionDesc;
+import net.demilich.metastone.game.spells.desc.filter.EntityFilter;
 import net.demilich.metastone.game.spells.desc.filter.FilterDesc;
 import net.demilich.metastone.game.spells.desc.filter.Operation;
 import net.demilich.metastone.game.spells.desc.manamodifier.CardCostModifierDesc;
+import net.demilich.metastone.game.spells.desc.source.SourceDesc;
 import net.demilich.metastone.game.spells.desc.trigger.EventTriggerDesc;
 import net.demilich.metastone.game.spells.desc.trigger.EventTriggerDeserializer;
 import net.demilich.metastone.game.spells.desc.trigger.TriggerDesc;
@@ -27,6 +30,7 @@ import net.demilich.metastone.game.spells.desc.valueprovider.AlgebraicOperation;
 import net.demilich.metastone.game.spells.desc.valueprovider.ValueProviderDesc;
 import net.demilich.metastone.game.targeting.CardLocation;
 import net.demilich.metastone.game.targeting.EntityReference;
+import net.demilich.metastone.game.targeting.TargetSelection;
 import net.demilich.metastone.game.targeting.TargetType;
 
 public class ParseUtils {
@@ -34,6 +38,7 @@ public class ParseUtils {
 	private static SpellDeserializer spellParser = new SpellDeserializer();
 	private static ValueProviderDeserializer valueProviderParser = new ValueProviderDeserializer();
 	private static FilterDeserializer filterParser = new FilterDeserializer();
+	private static SourceDeserializer sourceParser = new SourceDeserializer();
 	private static ConditionDeserializer conditionParser = new ConditionDeserializer();
 	private static EventTriggerDeserializer triggerParser = new EventTriggerDeserializer();
 	private static CardCostModifierDeserializer manaModifierParser = new CardCostModifierDeserializer();
@@ -55,6 +60,8 @@ public class ParseUtils {
 			}
 			return array;
 		}
+		case TARGET_SELECTION:
+			return Enum.valueOf(TargetSelection.class, entry.getAsString());
 		case TARGET_REFERENCE:
 			return parseEntityReference(entry.getAsString());
 		case TARGET_PLAYER:
@@ -79,6 +86,14 @@ public class ParseUtils {
 			return Enum.valueOf(Rarity.class, entry.getAsString());
 		case HERO_CLASS:
 			return Enum.valueOf(HeroClass.class, entry.getAsString());
+		case HERO_CLASS_ARRAY: {
+			JsonArray jsonArray = entry.getAsJsonArray();
+			HeroClass[] array = new HeroClass[jsonArray.size()];
+			for (int i = 0; i < array.length; i++) {
+				array[i] = Enum.valueOf(HeroClass.class, jsonArray.get(i).getAsString());
+			}
+			return array;
+		}
 		case BOARD_POSITION_RELATIVE:
 			return Enum.valueOf(RelativeToSource.class, entry.getAsString());
 		case CARD_LOCATION:
@@ -93,6 +108,8 @@ public class ParseUtils {
 			return Enum.valueOf(ActionType.class, entry.getAsString());
 		case TARGET_TYPE:
 			return Enum.valueOf(TargetType.class, entry.getAsString());
+		case CARD_DESC_TYPE:
+			return Enum.valueOf(CardDescType.class, entry.getAsString());
 		case ALGEBRAIC_OPERATION:
 			return Enum.valueOf(AlgebraicOperation.class, entry.getAsString());
 		case VALUE:
@@ -104,9 +121,23 @@ public class ParseUtils {
 		case VALUE_PROVIDER:
 			ValueProviderDesc valueProviderDesc = valueProviderParser.deserialize(entry, ValueProviderDesc.class, null);
 			return valueProviderDesc.create();
-		case ENTITY_FILTER:
+		case ENTITY_FILTER: {
 			FilterDesc filterDesc = filterParser.deserialize(entry, FilterDesc.class, null);
 			return filterDesc.create();
+		}
+		case CARD_SOURCE: {
+			SourceDesc sourceDesc = sourceParser.deserialize(entry, SourceDesc.class, null);
+			return sourceDesc.create();
+		}
+		case ENTITY_FILTER_ARRAY: {
+			JsonArray jsonArray = entry.getAsJsonArray();
+			EntityFilter[] array = new EntityFilter[jsonArray.size()];
+			for (int i = 0; i < array.length; i++) {
+				FilterDesc filterDesc = filterParser.deserialize(jsonArray.get(i), FilterDesc.class, null);
+				array[i] = filterDesc.create();
+			}
+			return array;
+		}
 		case CONDITION: {
 			ConditionDesc conditionDesc = conditionParser.deserialize(entry, ConditionDesc.class, null);
 			return conditionDesc.create();
@@ -160,6 +191,8 @@ public class ParseUtils {
 			return EntityReference.OTHER_FRIENDLY_MINIONS;
 		case "adjacent_minions":
 			return EntityReference.ADJACENT_MINIONS;
+		case "opposite_minions":
+			return EntityReference.OPPOSITE_MINIONS;
 		case "friendly_hero":
 			return EntityReference.FRIENDLY_HERO;
 		case "friendly_weapon":
@@ -178,6 +211,10 @@ public class ParseUtils {
 			return EntityReference.TARGET;
 		case "spell_target":
 			return EntityReference.SPELL_TARGET;
+		case "pending_card":
+			return EntityReference.PENDING_CARD;
+		case "event_card":
+			return EntityReference.EVENT_CARD;
 		case "self":
 			return EntityReference.SELF;
 		case "attacker":
@@ -186,6 +223,18 @@ public class ParseUtils {
 			return EntityReference.FRIENDLY_HAND;
 		case "enemy_hand":
 			return EntityReference.ENEMY_HAND;
+		case "leftmost_friendly_minion":
+			return EntityReference.LEFTMOST_FRIENDLY_MINION;
+		case "leftmost_enemy_minion":
+			return EntityReference.LEFTMOST_ENEMY_MINION;
+		case "friendly_player":
+			return EntityReference.FRIENDLY_PLAYER;
+		case "enemy_player":
+			return EntityReference.ENEMY_PLAYER;
+		case "minions_to_left":
+			return EntityReference.MINIONS_TO_LEFT;
+		case "minions_to_right":
+			return EntityReference.MINIONS_TO_RIGHT;
 		default:
 			return null;
 		}

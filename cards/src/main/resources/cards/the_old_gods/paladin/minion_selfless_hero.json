@@ -1,12 +1,11 @@
 {
-	"id": "minion_selfless_hero",
 	"name": "Selfless Hero",
 	"baseManaCost": 1,
 	"type": "MINION",
-	"baseAttack": 1,
-	"baseHp": 2,
+	"baseAttack": 2,
+	"baseHp": 1,
 	"heroClass": "PALADIN",
-	"rarity": "COMMON",
+	"rarity": "RARE",
 	"description": "Deathrattle: Give a random friendly minion Divine Shield.",
 	"deathrattle": {
 		"class": "AddAttributeSpell",

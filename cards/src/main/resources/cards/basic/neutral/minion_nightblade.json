@@ -1,5 +1,4 @@
 {
-	"id": "minion_nightblade",
 	"name": "Nightblade",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -13,13 +12,12 @@
 			"class": "DamageSpell",
 			"target": "ENEMY_HERO",
 			"value": 3
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

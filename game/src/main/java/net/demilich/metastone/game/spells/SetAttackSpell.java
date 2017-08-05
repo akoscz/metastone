@@ -11,8 +11,9 @@ import net.demilich.metastone.game.spells.desc.SpellDesc;
 
 public class SetAttackSpell extends Spell {
 
-	public static SpellDesc create() {
+	public static SpellDesc create(int value) {
 		Map<SpellArg, Object> arguments = SpellDesc.build(SetAttackSpell.class);
+		arguments.put(SpellArg.VALUE, value);
 		return new SpellDesc(arguments);
 	}
 
@@ -22,6 +23,7 @@ public class SetAttackSpell extends Spell {
 		target.setAttribute(Attribute.ATTACK, value);
 		target.removeAttribute(Attribute.TEMPORARY_ATTACK_BONUS);
 		target.removeAttribute(Attribute.ATTACK_BONUS);
+		target.removeAttribute(Attribute.CONDITIONAL_ATTACK_BONUS);
 	}
 
 }

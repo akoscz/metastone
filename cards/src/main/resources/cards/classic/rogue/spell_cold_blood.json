@@ -1,5 +1,4 @@
 {
-	"id": "spell_cold_blood",
 	"name": "Cold Blood",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -19,6 +18,7 @@
 			"attackBonus": 4
 		}
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

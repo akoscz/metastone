@@ -1,5 +1,4 @@
 {
-	"id": "minion_quartermaster",
 	"name": "Quartermaster",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -18,8 +17,7 @@
 				"class": "SpecificCardFilter",
 				"cardId": "token_silver_hand_recruit"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

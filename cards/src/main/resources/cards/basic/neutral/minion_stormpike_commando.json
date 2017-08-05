@@ -1,5 +1,4 @@
 {
-	"id": "minion_stormpike_commando",
 	"name": "Stormpike Commando",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -13,13 +12,12 @@
 		"spell": {
 			"class": "DamageSpell",
 			"value": 2
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

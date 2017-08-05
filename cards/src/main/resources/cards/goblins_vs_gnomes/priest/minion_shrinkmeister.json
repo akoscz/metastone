@@ -1,5 +1,4 @@
 {
-	"id": "minion_shrinkmeister",
 	"name": "Shrinkmeister",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 		"spell": {
 			"class": "TemporaryAttackSpell",
 			"value": -2
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

@@ -1,5 +1,4 @@
 {
-	"id": "spell_preparation",
 	"name": "Preparation",
 	"baseManaCost": 0,
 	"type": "SPELL",
@@ -9,7 +8,7 @@
 	"targetSelection": "NONE",
 	"spell": {
 		"class": "CardCostModifierSpell",
-		"target": "FRIENDLY_HERO",
+		"target": "FRIENDLY_PLAYER",
 		"cardCostModifier": {
 			"class": "OneTurnCostModifier",
 			"cardType": "SPELL",

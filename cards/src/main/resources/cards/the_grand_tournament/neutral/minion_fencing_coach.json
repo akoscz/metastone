@@ -1,5 +1,4 @@
 {
-	"id": "minion_fencing_coach",
 	"name": "Fencing Coach",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -11,7 +10,7 @@
 	"battlecry": {
 		"spell": {
 			"class": "CardCostModifierSpell",
-			"target": "FRIENDLY_HERO",
+			"target": "FRIENDLY_PLAYER",
 			"cardCostModifier": {
 				"class": "CardCostModifier",
 				"cardType": "HERO_POWER",
@@ -22,8 +21,7 @@
 					"targetPlayer": "SELF"
 				}
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

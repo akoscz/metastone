@@ -1,5 +1,4 @@
 {
-	"id": "minion_lights_champion",
 	"name": "Light's Champion",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -16,8 +15,7 @@
 				"class": "RaceFilter",
 				"race": "DEMON"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

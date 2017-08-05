@@ -1,5 +1,4 @@
 {
-	"id": "minion_ethereal_conjurer",
 	"name": "Ethereal Conjurer",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -20,8 +19,7 @@
 				"class": "CardFilter",
 				"cardType": "SPELL"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

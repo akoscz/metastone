@@ -1,5 +1,4 @@
 {
-	"id": "minion_gadgetzan_jouster",
 	"name": "Gadgetzan Jouster",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -18,8 +17,7 @@
 				"attackBonus": 1,
 				"hpBonus": 1
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

@@ -1,9 +1,8 @@
 {
-	"id": "spell_burrowing_mine",
 	"name": "Burrowing Mine",
 	"baseManaCost": 0,
 	"type": "SPELL",
-	"heroClass": "ANY",
+	"heroClass": "WARRIOR",
 	"rarity": "FREE",
 	"description": "When you draw this, it explodes. You take 10 damage and draw a card.",
 	"targetSelection": "NONE",
@@ -21,7 +20,8 @@
 				{
 					"class": "DamageSpell",
 					"target": "FRIENDLY_HERO",
-					"value": 10
+					"value": 10,
+					"ignoreSpellDamage": true
 				},
 				{
 					"class": "RemoveCardSpell",

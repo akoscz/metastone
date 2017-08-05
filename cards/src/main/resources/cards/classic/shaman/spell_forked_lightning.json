@@ -1,5 +1,4 @@
 {
-	"id": "spell_forked_lightning",
 	"name": "Forked Lightning",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -8,9 +7,13 @@
 	"description": "Deal 2 damage to 2 random enemy minions. Overload: (2)",
 	"targetSelection": "NONE",
 	"spell": {
-		"class": "MultiTargetDamageSpell",
+		"class": "MultiTargetSpell",
+		"target": "ENEMY_MINIONS",
 		"value": 2,
-		"howMany": 2
+		"spell": {
+			"class": "DamageSpell",
+			"value": 2
+		}
 	},
 	"condition": {
 		"class": "MinionCountCondition",
@@ -21,6 +24,7 @@
 	"attributes": {
 		"OVERLOAD": 2
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

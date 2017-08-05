@@ -1,5 +1,4 @@
 {
-	"id": "hero_power_soul_tap",
 	"name": "Soul Tap",
 	"baseManaCost": 2,
 	"type": "HERO_POWER",
@@ -12,6 +11,6 @@
 		"value": 1
 	},
 	"collectible": false,
-	"set": "CLASSIC",
+	"set": "THE_GRAND_TOURNAMENT",
 	"fileFormatVersion": 1
 }

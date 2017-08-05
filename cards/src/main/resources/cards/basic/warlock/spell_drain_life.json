@@ -1,5 +1,4 @@
 {
-	"id": "spell_drain_life",
 	"name": "Drain Life",
 	"baseManaCost": 3,
 	"type": "SPELL",
@@ -21,6 +20,7 @@
 			}
 		]
 	},
-	"set": "CLASSIC",
+	"collectible": true,
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

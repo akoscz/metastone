@@ -1,5 +1,4 @@
 {
-	"id": "minion_edwin_vancleef",
 	"name": "Edwin VanCleef",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -14,12 +13,14 @@
 			"target": "SELF",
 			"value": {
 				"class": "AttributeValueProvider",
-				"target": "FRIENDLY_HERO",
+				"target": "FRIENDLY_PLAYER",
 				"attribute": "COMBO",
 				"multiplier": 2
 			}
-		},
-		"resolvedLate": false
+		}
+	},
+	"attributes": {
+		"COMBO": true
 	},
 	"collectible": true,
 	"set": "CLASSIC",

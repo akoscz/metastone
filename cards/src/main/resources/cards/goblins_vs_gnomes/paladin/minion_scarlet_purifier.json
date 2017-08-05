@@ -1,5 +1,4 @@
 {
-	"id": "minion_scarlet_purifier",
 	"name": "Scarlet Purifier",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -18,8 +17,7 @@
 				"attribute": "DEATHRATTLES",
 				"operation": "HAS"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

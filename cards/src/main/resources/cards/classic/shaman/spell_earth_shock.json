@@ -1,5 +1,4 @@
 {
-	"id": "spell_earth_shock",
 	"name": "Earth Shock",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -19,6 +18,7 @@
 			}
 		]
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

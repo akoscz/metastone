@@ -1,5 +1,4 @@
 {
-	"id": "spell_force_of_nature",
 	"name": "Force of Nature",
 	"baseManaCost": 5,
 	"type": "SPELL",
@@ -15,6 +14,7 @@
 			"token_treant"
 		]
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

@@ -1,5 +1,4 @@
 {
-	"id": "spell_corruption",
 	"name": "Corruption",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -21,6 +20,6 @@
 		}
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

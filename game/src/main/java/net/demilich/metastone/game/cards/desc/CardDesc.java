@@ -18,6 +18,7 @@ public abstract class CardDesc {
 	public String description;
 	public CardType type;
 	public HeroClass heroClass;
+	public HeroClass[] heroClasses;
 	public Rarity rarity;
 	public CardSet set;
 	public int baseManaCost;
@@ -26,6 +27,7 @@ public abstract class CardDesc {
 	public int fileFormatVersion = 1;
 	public ValueProviderDesc manaCostModifier;
 	public TriggerDesc passiveTrigger;
+	public TriggerDesc deckTrigger;
 
 	public abstract Card createInstance();
 

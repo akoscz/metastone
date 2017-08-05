@@ -1,5 +1,4 @@
 {
-	"id": "minion_loatheb",
 	"name": "Loatheb",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -11,7 +10,7 @@
 	"battlecry": {
 		"spell": {
 			"class": "CardCostModifierSpell",
-			"target": "FRIENDLY_HERO",
+			"target": "FRIENDLY_PLAYER",
 			"cardCostModifier": {
 				"class": "CardCostModifier",
 				"cardType": "SPELL",
@@ -23,8 +22,7 @@
 					"targetPlayer": "OPPONENT"
 				}
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

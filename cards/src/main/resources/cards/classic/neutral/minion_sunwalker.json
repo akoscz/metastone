@@ -1,5 +1,4 @@
 {
-	"id": "minion_sunwalker",
 	"name": "Sunwalker",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -12,6 +11,7 @@
 		"DIVINE_SHIELD": true,
 		"TAUNT": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

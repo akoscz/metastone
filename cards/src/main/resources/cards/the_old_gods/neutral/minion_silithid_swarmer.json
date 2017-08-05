@@ -1,5 +1,4 @@
 {
-	"id": "minion_silithid_swarmer",
 	"name": "Silithid Swarmer",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -7,6 +6,7 @@
 	"baseHp": 5,
 	"heroClass": "ANY",
 	"rarity": "RARE",
+	"race": "BEAST",
 	"description": "Can only attack if your Hero attacked this turn.",
 	"trigger": {
 		"eventTrigger": {

@@ -32,11 +32,16 @@ public class Aura extends SpellTrigger {
 		setEntityFilter(desc.getFilter());
 	}
 
-	public Aura(GameEventTrigger secondaryTrigger, SpellDesc applyAuraEffect, SpellDesc removeAuraEffect, EntityReference targetSelection) {
+	public Aura(GameEventTrigger secondaryTrigger, SpellDesc applyAuraEffect, SpellDesc removeAuraEffect, EntityReference targetSelection, EntityFilter entityFilter) {
 		super(new BoardChangedTrigger(), secondaryTrigger, applyAuraEffect, false);
 		this.applyAuraEffect = applyAuraEffect;
 		this.removeAuraEffect = removeAuraEffect;
 		this.targets = targetSelection;
+		this.entityFilter = entityFilter;
+	}
+
+	public Aura(GameEventTrigger secondaryTrigger, SpellDesc applyAuraEffect, SpellDesc removeAuraEffect, EntityReference targetSelection) {
+		this(secondaryTrigger, applyAuraEffect, removeAuraEffect, targetSelection, null);
 	}
 
 	public Aura(SpellDesc applyAuraEffect, SpellDesc removeAuraEffect, EntityReference targetSelection) {
@@ -44,15 +49,6 @@ public class Aura extends SpellTrigger {
 	}
 
 	protected boolean affects(GameContext context, Player player, Entity target, List<Entity> resolvedTargets) {
-		if (target.getReference().equals(getHostReference())) {
-			return false;
-		}
-
-		Actor targetActor = (Actor) target;
-		if (targetActor.isDestroyed()) {
-			return false;
-		}
-		
 		if (getEntityFilter() != null && !getEntityFilter().matches(context, player, target)) {
 			return false;
 		}

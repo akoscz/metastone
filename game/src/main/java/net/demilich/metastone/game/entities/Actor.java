@@ -16,7 +16,7 @@ import net.demilich.metastone.game.spells.trigger.SpellTrigger;
 public abstract class Actor extends Entity {
 
 	private Card sourceCard;
-	private SpellTrigger spellTrigger;
+	private List<SpellTrigger> spellTriggers = new ArrayList<SpellTrigger>();
 	private CardCostModifier cardCostModifier;
 
 	public Actor(Card sourceCard) {
@@ -31,6 +31,10 @@ public abstract class Actor extends Entity {
 		getDeathrattles().add(deathrattleSpell);
 	}
 
+	public void addSpellTrigger(SpellTrigger spellTrigger) {
+		spellTriggers.add(spellTrigger);
+	}
+
 	public boolean canAttackThisTurn() {
 		if (hasAttribute(Attribute.CANNOT_ATTACK)) {
 			return false;
@@ -41,14 +45,21 @@ public abstract class Actor extends Entity {
 		if (hasAttribute(Attribute.SUMMONING_SICKNESS) && !hasAttribute(Attribute.CHARGE)) {
 			return false;
 		}
-		return getAttack() > 0 && getAttributeValue(Attribute.NUMBER_OF_ATTACKS) > 0;
+		return getAttack() > 0 && ((getAttributeValue(Attribute.NUMBER_OF_ATTACKS) + getAttributeValue(Attribute.EXTRA_ATTACKS)) > 0 || hasAttribute(Attribute.UNLIMITED_ATTACKS));
+	}
+
+	public void clearSpellTriggers() {
+		this.spellTriggers = new ArrayList<SpellTrigger>();
 	}
 
 	@Override
 	public Actor clone() {
 		Actor clone = (Actor) super.clone();
 		clone.attributes = new EnumMap<>(getAttributes());
-		clone.spellTrigger = spellTrigger != null ? spellTrigger.clone() : null;
+		clone.clearSpellTriggers();
+		for (SpellTrigger trigger : getSpellTriggers()) {
+			clone.spellTriggers.add(trigger.clone());
+		}
 		if (hasAttribute(Attribute.DEATHRATTLES)) {
 			clone.removeAttribute(Attribute.DEATHRATTLES);
 			for (SpellDesc deathrattleSpell : getDeathrattles()) {
@@ -111,12 +122,12 @@ public abstract class Actor extends Entity {
 		return sourceCard;
 	}
 
-	public SpellTrigger getSpellTrigger() {
-		return spellTrigger;
+	public List<SpellTrigger> getSpellTriggers() {
+		return new ArrayList<SpellTrigger>(spellTriggers);
 	}
 
 	public boolean hasSpellTrigger() {
-		return spellTrigger != null;
+		return spellTriggers.size() != 0;
 	}
 	
 	public int getMaxNumberOfAttacks() {
@@ -127,7 +138,6 @@ public abstract class Actor extends Entity {
 		}
 		return 1;
 	}
-
 
 	@Override
 	public boolean isDestroyed() {
@@ -191,17 +201,13 @@ public abstract class Actor extends Entity {
 	@Override
 	public void setOwner(int ownerIndex) {
 		super.setOwner(ownerIndex);
-		if (hasSpellTrigger()) {
-			spellTrigger.setHost(this);
+		for (SpellTrigger trigger : spellTriggers) {
+			trigger.setHost(this);
 		}
 	}
 
 	public void setRace(Race race) {
 		setAttribute(Attribute.RACE, race);
-	}
-
-	public void setSpellTrigger(SpellTrigger spellTrigger) {
-		this.spellTrigger = spellTrigger;
 	}
 
 	@Override

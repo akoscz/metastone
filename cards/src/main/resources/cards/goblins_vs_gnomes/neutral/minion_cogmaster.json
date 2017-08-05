@@ -1,5 +1,4 @@
 {
-	"id": "minion_cogmaster",
 	"name": "Cogmaster",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -20,8 +19,11 @@
 				"ifTrue": 2,
 				"ifFalse": 0,
 				"condition": {
-					"class": "RaceOnBoardCondition",
-					"race": "MECH"
+					"class": "MinionOnBoardCondition",
+					"cardFilter": {
+						"class": "RaceFilter",
+						"race": "MECH"
+					}
 				}
 			}
 		}

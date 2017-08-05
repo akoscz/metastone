@@ -1,5 +1,4 @@
 {
-	"id": "minion_kezan_mystic",
 	"name": "Kezan Mystic",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -11,8 +10,7 @@
 	"battlecry": {
 		"spell": {
 			"class": "StealRandomSecretSpell"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

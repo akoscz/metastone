@@ -1,5 +1,4 @@
 {
-	"id": "minion_malygos",
 	"name": "Malygos",
 	"baseManaCost": 9,
 	"type": "MINION",
@@ -12,6 +11,7 @@
 	"attributes": {
 		"SPELL_DAMAGE": 5
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

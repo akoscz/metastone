@@ -1,5 +1,4 @@
 {
-	"id": "minion_arathi_weaponsmith",
 	"name": "Arathi Weaponsmith",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -12,8 +11,7 @@
 		"spell": {
 			"class": "EquipWeaponSpell",
 			"card": "weapon_battle_axe"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

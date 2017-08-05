@@ -14,8 +14,6 @@ public interface IGameEventListener {
 
 	public abstract EntityReference getHostReference();
 
-	public abstract TriggerLayer getLayer();
-
 	public abstract int getOwner();
 
 	public abstract boolean interestedIn(GameEventType eventType);
@@ -39,6 +37,10 @@ public interface IGameEventListener {
 	public abstract boolean isDelayed();
 
 	public abstract void delayTimeDown();
+
+	public abstract boolean hasCounter();
+
+	public abstract void countDown();
 
 	public abstract void expire();
 	

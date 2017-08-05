@@ -18,9 +18,9 @@ import net.demilich.metastone.game.entities.Actor;
 import net.demilich.metastone.game.entities.Entity;
 import net.demilich.metastone.game.entities.EntityType;
 import net.demilich.metastone.game.entities.heroes.HeroClass;
-import net.demilich.metastone.game.entities.minions.Minion;
 import net.demilich.metastone.game.entities.minions.Race;
 import net.demilich.metastone.game.entities.minions.RelativeToSource;
+import net.demilich.metastone.game.entities.minions.Summon;
 import net.demilich.metastone.game.spells.desc.SpellArg;
 import net.demilich.metastone.game.spells.desc.SpellDesc;
 import net.demilich.metastone.game.spells.desc.filter.EntityFilter;
@@ -72,11 +72,13 @@ public class SpellUtils {
 		card = CardCatalogue.getCardById(cardName);
 		if (spell.get(SpellArg.CARD).toString().toUpperCase().equals("PENDING_CARD")) {
 			card = (Card) context.getPendingCard();
+		} else if (spell.get(SpellArg.CARD).toString().toUpperCase().equals("EVENT_CARD")) {
+			card = (Card) context.getEventCard();
 		}
 		return card;
 	}
 
-	public static Card[] getCards(SpellDesc spell) {
+	public static Card[] getCards(GameContext context, SpellDesc spell) {
 		String[] cardNames = null;
 		if (spell.contains(SpellArg.CARDS)) {
 			cardNames = (String[]) spell.get(SpellArg.CARDS);
@@ -86,7 +88,7 @@ public class SpellUtils {
 		}
 		Card[] cards = new Card[cardNames.length];
 		for (int i = 0; i < cards.length; i++) {
-			cards[i] = CardCatalogue.getCardById(cardNames[i]);
+			cards[i] = context.getCardById(cardNames[i]);
 		}
 		return cards;
 	}
@@ -97,11 +99,36 @@ public class SpellUtils {
 		for (Card card : cards) {
 			SpellDesc spellClone = spell.addArg(SpellArg.CARD, card.getCardId());
 			DiscoverAction discover = DiscoverAction.createDiscover(spellClone);
+			discover.setCard(card);
 			discover.setActionSuffix(card.getName());
 			discoverActions.add(discover);
 		}
+		if (discoverActions.size() == 0) {
+			return null;
+		}
 		
-		return (DiscoverAction) player.getBehaviour().requestAction(context, player, discoverActions);
+		if (context.getLogic().attributeExists(Attribute.ALL_RANDOM_YOGG_ONLY_FINAL_DESTINATION)) {
+			return (DiscoverAction) discoverActions.get(context.getLogic().random(discoverActions.size()));
+		} else {
+			return (DiscoverAction) player.getBehaviour().requestAction(context, player, discoverActions);
+		}
+	}
+
+	public static DiscoverAction getSpellDiscover(GameContext context, Player player, SpellDesc desc, List<SpellDesc> spells) {
+		List<GameAction> discoverActions = new ArrayList<>();
+		for (SpellDesc spell : spells) {
+			DiscoverAction discover = DiscoverAction.createDiscover(spell);
+			discover.setName(spell.getString(SpellArg.NAME));
+			discover.setDescription(spell.getString(SpellArg.DESCRIPTION));
+			discover.setActionSuffix((String) spell.get(SpellArg.NAME));
+			discoverActions.add(discover);
+		}
+		
+		if (context.getLogic().attributeExists(Attribute.ALL_RANDOM_YOGG_ONLY_FINAL_DESTINATION)) {
+			return (DiscoverAction) discoverActions.get(context.getLogic().random(discoverActions.size()));
+		} else {
+			return (DiscoverAction) player.getBehaviour().requestAction(context, player, discoverActions);
+		}
 	}
 
 	public static Card getRandomCard(CardCollection source, Predicate<Card> filter) {
@@ -171,8 +198,8 @@ public class SpellUtils {
 
 	public static int hasHowManyOfRace(Player player, Race race) {
 		int count = 0;
-		for (Minion minion : player.getMinions()) {
-			if (minion.getRace() == race) {
+		for (Summon summon : player.getSummons()) {
+			if (summon.getRace() == race) {
 				count++;
 			}
 		}
@@ -237,7 +264,7 @@ public class SpellUtils {
 			return UNDEFINED;
 		}
 
-		int sourcePosition = context.getBoardPosition((Minion) source);
+		int sourcePosition = context.getBoardPosition((Summon) source);
 		if (sourcePosition == UNDEFINED) {
 			return UNDEFINED;
 		}

@@ -1,5 +1,4 @@
 {
-	"id": "weapon_fiery_war_axe",
 	"name": "Fiery War Axe",
 	"baseManaCost": 2,
 	"type": "WEAPON",
@@ -9,6 +8,6 @@
 	"rarity": "FREE",
 	"description": "",
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

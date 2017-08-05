@@ -1,5 +1,4 @@
 {
-	"id": "minion_ancient_watcher",
 	"name": "Ancient Watcher",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -11,6 +10,7 @@
 	"attributes": {
 		"CANNOT_ATTACK": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

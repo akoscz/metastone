@@ -1,5 +1,4 @@
 {
-	"id": "minion_novice_engineer",
 	"name": "Novice Engineer",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -11,13 +10,12 @@
 	"battlecry": {
 		"spell": {
 			"class": "DrawCardSpell"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

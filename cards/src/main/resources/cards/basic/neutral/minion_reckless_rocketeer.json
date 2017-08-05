@@ -1,5 +1,4 @@
 {
-	"id": "minion_reckless_rocketeer",
 	"name": "Reckless Rocketeer",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -11,6 +10,7 @@
 	"attributes": {
 		"CHARGE": true
 	},
-	"set": "CLASSIC",
+	"collectible": true,
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

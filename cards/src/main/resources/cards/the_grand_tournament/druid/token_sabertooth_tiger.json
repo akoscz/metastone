@@ -1,6 +1,5 @@
 {
-	"id": "token_sabertooth_tiger",
-	"name": "Tiger Form",
+	"name": "Sabertooth Tiger",
 	"baseManaCost": 2,
 	"type": "MINION",
 	"baseAttack": 3,

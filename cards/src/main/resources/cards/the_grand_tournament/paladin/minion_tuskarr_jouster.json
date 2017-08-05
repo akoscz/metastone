@@ -1,5 +1,4 @@
 {
-	"id": "minion_tuskarr_jouster",
 	"name": "Tuskarr Jouster",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -16,8 +15,7 @@
 				"target": "FRIENDLY_HERO",
 				"value": 7
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

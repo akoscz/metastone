@@ -1,5 +1,4 @@
 {
-	"id": "minion_faceless_manipulator",
 	"name": "Faceless Manipulator",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -12,8 +11,7 @@
 		"targetSelection": "MINIONS",
 		"spell": {
 			"class": "custom.FacelessSpell"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

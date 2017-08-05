@@ -1,5 +1,4 @@
 {
-	"id": "minion_archthief_rafaam",
 	"name": "Arch-Thief Rafaam",
 	"baseManaCost": 9,
 	"type": "MINION",
@@ -20,8 +19,7 @@
 			"spell": {
 				"class": "ReceiveCardSpell"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

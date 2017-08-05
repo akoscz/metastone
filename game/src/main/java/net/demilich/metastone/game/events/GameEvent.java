@@ -2,12 +2,10 @@ package net.demilich.metastone.game.events;
 
 import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.entities.Entity;
-import net.demilich.metastone.game.spells.trigger.TriggerLayer;
 
 public abstract class GameEvent {
 
 	private final GameContext context;
-	private TriggerLayer triggerLayer = TriggerLayer.DEFAULT;
 	private final int targetPlayerId;
 	private final int sourcePlayerId;
 
@@ -36,14 +34,6 @@ public abstract class GameEvent {
 		return context;
 	}
 
-	public TriggerLayer getTriggerLayer() {
-		return triggerLayer;
-	}
-
-	public void setTriggerLayer(TriggerLayer triggerLayer) {
-		this.triggerLayer = triggerLayer;
-	}
-
 	public int getTargetPlayerId() {
 		return targetPlayerId;
 	}
@@ -52,4 +42,8 @@ public abstract class GameEvent {
 		return sourcePlayerId;
 	}
 
+	@Override
+	public String toString() {
+		return "[EVENT " + getClass().getSimpleName() + "]";
+	}
 }

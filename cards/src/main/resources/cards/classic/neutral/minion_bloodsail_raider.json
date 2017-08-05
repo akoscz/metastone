@@ -1,5 +1,4 @@
 {
-	"id": "minion_bloodsail_raider",
 	"name": "Bloodsail Raider",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -18,8 +17,7 @@
 				"target": "FRIENDLY_WEAPON",
 				"attribute": "ATTACK"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

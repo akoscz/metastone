@@ -1,5 +1,4 @@
 {
-	"id": "minion_antique_healbot",
 	"name": "Antique Healbot",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -14,8 +13,7 @@
 			"class": "HealSpell",
 			"target": "FRIENDLY_HERO",
 			"value": 8
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

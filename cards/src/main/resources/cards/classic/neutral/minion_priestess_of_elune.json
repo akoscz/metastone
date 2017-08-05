@@ -1,5 +1,4 @@
 {
-	"id": "minion_priestess_of_elune",
 	"name": "Priestess of Elune",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 			"class": "HealSpell",
 			"target": "FRIENDLY_HERO",
 			"value": 4
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

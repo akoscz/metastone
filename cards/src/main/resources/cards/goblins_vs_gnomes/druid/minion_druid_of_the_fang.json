@@ -1,5 +1,4 @@
 {
-	"id": "minion_druid_of_the_fang",
 	"name": "Druid of the Fang",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -15,10 +14,12 @@
 			"card": "token_cobra_form"
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "BEAST"
-		},
-		"resolvedLate": false
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "BEAST"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

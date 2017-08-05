@@ -1,5 +1,4 @@
 {
-	"id": "spell_doom",
 	"name": "DOOM!",
 	"baseManaCost": 10,
 	"type": "SPELL",
@@ -23,6 +22,7 @@
 			}
 		]
 	},
+	"collectible": true,
 	"set": "THE_OLD_GODS",
 	"fileFormatVersion": 1
 }

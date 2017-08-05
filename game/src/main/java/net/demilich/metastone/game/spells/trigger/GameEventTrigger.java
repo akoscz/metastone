@@ -15,9 +15,11 @@ public abstract class GameEventTrigger extends CustomCloneable {
 
 	private int owner = -1;
 	protected final EventTriggerDesc desc;
+	private int triggerCount;
 
 	public GameEventTrigger(EventTriggerDesc desc) {
 		this.desc = desc;
+		this.triggerCount = desc.getTriggerCount();
 	}
 
 	@Override
@@ -72,7 +74,7 @@ public abstract class GameEventTrigger extends CustomCloneable {
 		}
 		Condition condition = (Condition) desc.get(EventTriggerArg.QUEUE_CONDITION);
 		Player owner = event.getGameContext().getPlayer(getOwner());
-		if (condition != null && !condition.isFulfilled(event.getGameContext(), owner, event.getEventTarget())) {
+		if (condition != null && !condition.isFulfilled(event.getGameContext(), owner, event.getEventSource(), event.getEventTarget())) {
 			return false;
 		}
 		return fire(event, host);
@@ -80,6 +82,24 @@ public abstract class GameEventTrigger extends CustomCloneable {
 
 	public int getOwner() {
 		return owner;
+	}
+
+	public int getTriggerCount() {
+		return triggerCount;
+	}
+
+	public void countDown() {
+		triggerCount--;
+		if (triggerCount < 0) {
+			triggerCount = 0;
+		}
+	}
+
+	public void countDown(int num) {
+		triggerCount -= num;
+		if (triggerCount < 0) {
+			triggerCount = 0;
+		}
 	}
 
 	public abstract GameEventType interestedIn();
@@ -96,7 +116,7 @@ public abstract class GameEventTrigger extends CustomCloneable {
 	public boolean canFireCondition(GameEvent event) {
 		Condition condition = (Condition) desc.get(EventTriggerArg.FIRE_CONDITION);
 		Player owner = event.getGameContext().getPlayer(getOwner());
-		if (condition != null && !condition.isFulfilled(event.getGameContext(), owner, event.getEventTarget())) {
+		if (condition != null && !condition.isFulfilled(event.getGameContext(), owner, event.getEventSource(), event.getEventTarget())) {
 			return false;
 		}
 		return true;

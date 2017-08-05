@@ -1,9 +1,8 @@
 {
-	"id": "minion_hooded_acolyte",
 	"name": "Hooded Acolyte",
 	"baseManaCost": 4,
 	"type": "MINION",
-	"baseAttack": 2,
+	"baseAttack": 3,
 	"baseHp": 6,
 	"heroClass": "PRIEST",
 	"rarity": "COMMON",
@@ -35,13 +34,13 @@
 				},
 				{
 					"class": "ModifyAttributeSpell",
-					"target": "FRIENDLY_HERO",
+					"target": "FRIENDLY_PLAYER",
 					"attribute": "CTHUN_ATTACK_BUFF",
 					"value": 1
 				},
 				{
 					"class": "ModifyAttributeSpell",
-					"target": "FRIENDLY_HERO",
+					"target": "FRIENDLY_PLAYER",
 					"attribute": "CTHUN_HEALTH_BUFF",
 					"value": 1
 				}

@@ -1,5 +1,4 @@
 {
-	"id": "minion_murloc_tidehunter",
 	"name": "Murloc Tidehunter",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -14,13 +13,12 @@
 			"class": "SummonSpell",
 			"card": "token_murloc_scout",
 			"boardPositionRelative": "RIGHT"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

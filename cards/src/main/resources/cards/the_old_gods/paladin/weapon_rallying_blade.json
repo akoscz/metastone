@@ -1,5 +1,4 @@
 {
-	"id": "weapon_rallying_blade",
 	"name": "Rallying Blade",
 	"baseManaCost": 3,
 	"type": "WEAPON",
@@ -15,7 +14,7 @@
 			"target": "FRIENDLY_MINIONS",
 			"value": 1,
 			"filter": {
-				"class": "CardFilter",
+				"class": "AttributeFilter",
 				"attribute": "DIVINE_SHIELD",
 				"operation": "HAS"
 			}

@@ -1,5 +1,4 @@
 {
-	"id": "minion_gorillabot_a3",
 	"name": "Gorillabot A-3",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -24,10 +23,12 @@
 			}
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "MECH"
-		},
-		"resolvedLate": false
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "MECH"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

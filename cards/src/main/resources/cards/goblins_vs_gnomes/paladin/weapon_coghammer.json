@@ -1,5 +1,4 @@
 {
-	"id": "weapon_coghammer",
 	"name": "Coghammer",
 	"baseManaCost": 3,
 	"type": "WEAPON",
@@ -24,8 +23,7 @@
 				}
 			],
 			"randomTarget": true
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

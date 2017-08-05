@@ -1,5 +1,4 @@
 {
-	"id": "minion_ogre_ninja",
 	"name": "Ogre Ninja",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -21,6 +20,9 @@
 			"class": "FumbleSpell",
 			"target": "EVENT_TARGET"
 		}
+	},
+	"attributes": {
+		"STEALTH": true
 	},
 	"collectible": true,
 	"set": "GOBLINS_VS_GNOMES",

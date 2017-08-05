@@ -1,5 +1,4 @@
 {
-	"id": "minion_earthen_ring_farseer",
 	"name": "Earthen Ring Farseer",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -18,6 +17,7 @@
 	"attributes": {
 		"BATTLECRY": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

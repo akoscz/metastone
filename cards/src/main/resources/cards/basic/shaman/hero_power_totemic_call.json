@@ -1,5 +1,4 @@
 {
-	"id": "hero_power_totemic_call",
 	"name": "Totemic Call",
 	"baseManaCost": 2,
 	"type": "HERO_POWER",
@@ -23,20 +22,32 @@
 				"class": "AndCondition",
 				"conditions": [
 					{
-						"class": "HasSpecificMinionOnBoardCondition",
-						"cardId": "token_searing_totem"
+						"class": "MinionOnBoardCondition",
+						"cardFilter": {
+							"class": "SpecificCardFilter",
+							"cardId": "token_searing_totem"
+						}
 					},
 					{
-						"class": "HasSpecificMinionOnBoardCondition",
-						"cardId": "token_healing_totem"
+						"class": "MinionOnBoardCondition",
+						"cardFilter": {
+							"class": "SpecificCardFilter",
+							"cardId": "token_healing_totem"
+						}
 					},
 					{
-						"class": "HasSpecificMinionOnBoardCondition",
-						"cardId": "token_wrath_of_air_totem"
+						"class": "MinionOnBoardCondition",
+						"cardFilter": {
+							"class": "SpecificCardFilter",
+							"cardId": "token_wrath_of_air_totem"
+						}
 					},
 					{
-						"class": "HasSpecificMinionOnBoardCondition",
-						"cardId": "token_stoneclaw_totem"
+						"class": "MinionOnBoardCondition",
+						"cardFilter": {
+							"class": "SpecificCardFilter",
+							"cardId": "token_stoneclaw_totem"
+						}
 					}
 				],
 				"invert": true
@@ -49,6 +60,6 @@
 		]
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

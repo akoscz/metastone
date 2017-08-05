@@ -1,5 +1,4 @@
 {
-	"id": "spell_resurrect",
 	"name": "Resurrect",
 	"baseManaCost": 2,
 	"type": "SPELL",
@@ -9,6 +8,11 @@
 	"targetSelection": "NONE",
 	"spell": {
 		"class": "ResurrectSpell"
+	},
+	"condition": {
+		"class": "GraveyardCountCondition",
+		"operation": "GREATER",
+		"value": 0
 	},
 	"collectible": true,
 	"set": "BLACKROCK_MOUNTAIN",

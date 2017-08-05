@@ -1,5 +1,4 @@
 {
-	"id": "minion_unearthed_raptor",
 	"name": "Unearthed Raptor",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -17,8 +16,7 @@
 				"attribute": "DEATHRATTLES",
 				"operation": "HAS"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

@@ -1,5 +1,4 @@
 {
-	"id": "weapon_arcanite_reaper",
 	"name": "Arcanite Reaper",
 	"baseManaCost": 5,
 	"type": "WEAPON",
@@ -9,6 +8,6 @@
 	"rarity": "FREE",
 	"description": "",
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

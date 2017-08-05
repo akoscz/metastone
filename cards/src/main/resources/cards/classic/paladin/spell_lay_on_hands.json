@@ -1,5 +1,4 @@
 {
-	"id": "spell_lay_on_hands",
 	"name": "Lay on Hands",
 	"baseManaCost": 8,
 	"type": "SPELL",
@@ -20,6 +19,7 @@
 			}
 		]
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

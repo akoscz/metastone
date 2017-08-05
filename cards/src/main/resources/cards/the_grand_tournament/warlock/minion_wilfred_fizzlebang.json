@@ -1,5 +1,4 @@
 {
-	"id": "minion_wilfred_fizzlebang",
 	"name": "Wilfred Fizzlebang",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -16,7 +15,7 @@
 		},
 		"spell": {
 			"class": "CardCostModifierSpell",
-			"target": "FRIENDLY_HERO",
+			"target": "FRIENDLY_PLAYER",
 			"cardCostModifier": {
 				"class": "CardCostModifier",
 				"target": "EVENT_TARGET",

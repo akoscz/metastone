@@ -1,5 +1,4 @@
 {
-	"id": "minion_cabal_shadow_priest",
 	"name": "Cabal Shadow Priest",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -18,8 +17,7 @@
 				"operation": "LESS_OR_EQUAL",
 				"value": 2
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

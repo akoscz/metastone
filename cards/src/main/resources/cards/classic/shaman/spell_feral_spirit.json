@@ -1,5 +1,4 @@
 {
-	"id": "spell_feral_spirit",
 	"name": "Feral Spirit",
 	"baseManaCost": 3,
 	"type": "SPELL",
@@ -17,6 +16,7 @@
 	"attributes": {
 		"OVERLOAD": 2
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

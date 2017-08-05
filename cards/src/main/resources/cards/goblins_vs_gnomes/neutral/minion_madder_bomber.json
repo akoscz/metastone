@@ -1,5 +1,4 @@
 {
-	"id": "minion_madder_bomber",
 	"name": "Madder Bomber",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -14,8 +13,7 @@
 			"target": "ALL_OTHER_CHARACTERS",
 			"value": 1,
 			"howMany": 6
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

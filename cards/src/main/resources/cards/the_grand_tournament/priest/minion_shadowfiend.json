@@ -1,5 +1,4 @@
 {
-	"id": "minion_shadowfiend",
 	"name": "Shadowfiend",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -14,10 +13,14 @@
 			"targetPlayer": "SELF"
 		},
 		"spell": {
-			"class": "ModifyAttributeSpell",
-			"target": "EVENT_TARGET",
-			"attribute": "MANA_COST_MODIFIER",
-			"value": -1
+			"class": "CardCostModifierSpell",
+			"target": "FRIENDLY_PLAYER",
+			"cardCostModifier": {
+				"class": "CardCostModifier",
+				"target": "EVENT_TARGET",
+				"operation": "SUBTRACT",
+				"value": 1
+			}
 		}
 	},
 	"collectible": true,

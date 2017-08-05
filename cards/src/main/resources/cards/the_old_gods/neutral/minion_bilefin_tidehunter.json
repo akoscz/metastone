@@ -1,5 +1,4 @@
 {
-	"id": "minion_bilefin_tidehunter",
 	"name": "Bilefin Tidehunter",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -13,7 +12,8 @@
 		"spell": {
 			"class": "SummonSpell",
 			"targetPlayer": "SELF",
-			"card": "token_ooze"
+			"card": "token_ooze",
+			"boardPositionRelative": "RIGHT"
 		}
 	},
 	"attributes": {

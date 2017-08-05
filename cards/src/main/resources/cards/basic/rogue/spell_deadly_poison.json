@@ -1,5 +1,4 @@
 {
-	"id": "spell_deadly_poison",
 	"name": "Deadly Poison",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -15,6 +14,7 @@
 	"condition": {
 		"class": "HasWeaponCondition"
 	},
-	"set": "CLASSIC",
+	"collectible": true,
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

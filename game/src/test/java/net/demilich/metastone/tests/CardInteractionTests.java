@@ -36,14 +36,17 @@ public class CardInteractionTests extends TestBase {
 		Assert.assertEquals(gahzrilla.getAttack(), 6);
 		Assert.assertEquals(gahzrilla.getHp(), 9);
 
-		// buff it with 'Charge' spell
-		Card chargeCard = CardCatalogue.getCardById("spell_charge");
-		context.getLogic().receiveCard(hunter.getId(), chargeCard);
-		GameAction action = chargeCard.play();
+		// buff it with 'Abusive Sergeant' spell
+		// This temporary Attack boost should be doubled and removed after the turn
+		Card abusiveSergeant = CardCatalogue.getCardById("minion_abusive_sergeant");
+		context.getLogic().receiveCard(hunter.getId(), abusiveSergeant);
+		GameAction action = abusiveSergeant.play();
 		action.setTarget(gahzrilla);
 		context.getLogic().performGameAction(hunter.getId(), action);
 		Assert.assertEquals(gahzrilla.getAttack(), 8);
 		Assert.assertEquals(gahzrilla.getHp(), 9);
+
+		context.getLogic().destroy((Actor) find(context, "minion_abusive_sergeant"));
 
 		// buff it with 'Cruel Taskmaster' spell
 		Card cruelTaskmasterCard = CardCatalogue.getCardById("minion_cruel_taskmaster");
@@ -56,8 +59,8 @@ public class CardInteractionTests extends TestBase {
 
 		context.getLogic().destroy((Actor) find(context, "minion_cruel_taskmaster"));
 
-		// buff it with 'Abusive Sergeant' spell
-		Card abusiveSergeant = CardCatalogue.getCardById("minion_abusive_sergeant");
+		// buff it again with 'Abusive Sergeant' spell
+		abusiveSergeant = CardCatalogue.getCardById("minion_abusive_sergeant");
 		context.getLogic().receiveCard(hunter.getId(), abusiveSergeant);
 		action = abusiveSergeant.play();
 		action.setTarget(gahzrilla);
@@ -67,7 +70,7 @@ public class CardInteractionTests extends TestBase {
 
 		context.endTurn();
 		context.endTurn();
-		Assert.assertEquals(gahzrilla.getAttack(), 20);
+		Assert.assertEquals(gahzrilla.getAttack(), 16);
 		Assert.assertEquals(gahzrilla.getHp(), 8);
 	}
 
@@ -366,5 +369,44 @@ public class CardInteractionTests extends TestBase {
 			}
 		}
 	}
-
+	
+	@Test
+	public void testImpGangBossConeOfCold() {
+		GameContext context = createContext(HeroClass.MAGE, HeroClass.WARRIOR);
+		Player player = context.getPlayer1();
+		Player opponent = context.getPlayer2();
+		
+		context.endTurn();
+		Minion firstYeti = playMinionCard(context, opponent, (MinionCard) CardCatalogue.getCardById("minion_chillwind_yeti"));
+		Minion impGangBoss = playMinionCard(context, opponent, (MinionCard) CardCatalogue.getCardById("minion_imp_gang_boss"));
+		Minion secondYeti = playMinionCard(context, opponent, (MinionCard) CardCatalogue.getCardById("minion_chillwind_yeti"));
+		Assert.assertEquals(opponent.getMinions().size(), 3);
+		context.endTurn();
+		
+		playCardWithTarget(context, player, CardCatalogue.getCardById("spell_cone_of_cold"), impGangBoss);
+		Assert.assertEquals(opponent.getMinions().size(), 4);
+		Assert.assertTrue(firstYeti.hasAttribute(Attribute.FROZEN));
+		Assert.assertTrue(impGangBoss.hasAttribute(Attribute.FROZEN));
+		Assert.assertFalse(secondYeti.hasAttribute(Attribute.FROZEN));
+	}
+	
+	@Test
+	public void testSummoningStonePrep() {
+		GameContext context = createContext(HeroClass.ROGUE, HeroClass.WARRIOR);
+		Player player = context.getPlayer1();
+		
+		playCard(context, player, CardCatalogue.getCardById("minion_summoning_stone"));
+		playCard(context, player, CardCatalogue.getCardById("spell_preparation"));
+		playCard(context, player, CardCatalogue.getCardById("secret_ice_block"));
+		
+		Assert.assertEquals(player.getMinions().size(), 3);
+		for (Minion minion : player.getMinions()) {
+			if (minion.getSourceCard().getCardId().equalsIgnoreCase("minion_summoning_stone")) {
+				continue;
+			}
+			
+			Assert.assertEquals(minion.getSourceCard().getBaseManaCost(), 0);
+		}
+	}
 }
+

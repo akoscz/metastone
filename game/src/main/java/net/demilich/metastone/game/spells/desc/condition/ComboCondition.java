@@ -12,8 +12,8 @@ public class ComboCondition extends Condition {
 	}
 
 	@Override
-	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity target) {
-		return player.getHero().hasAttribute(Attribute.COMBO);
+	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity source, Entity target) {
+		return player.hasAttribute(Attribute.COMBO);
 	}
 
 }

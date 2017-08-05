@@ -1,5 +1,4 @@
 {
-	"id": "spell_frost_shock",
 	"name": "Frost Shock",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -20,6 +19,7 @@
 			}
 		]
 	},
-	"set": "CLASSIC",
+	"collectible": true,
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

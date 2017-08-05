@@ -1,5 +1,4 @@
 {
-	"id": "token_healing_totem",
 	"name": "Healing Totem",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -21,6 +20,6 @@
 		}
 	},
 	"collectible": false,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

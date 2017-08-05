@@ -1,5 +1,4 @@
 {
-	"id": "minion_chillmaw",
 	"name": "Chillmaw",
 	"baseManaCost": 7,
 	"type": "MINION",
@@ -18,7 +17,10 @@
 		},
 		"condition": {
 			"class": "HoldsCardCondition",
-			"race": "DRAGON"
+			"cardFilter": {
+				"class": "CardFilter",
+				"race": "DRAGON"
+			}
 		}
 	},
 	"attributes": {

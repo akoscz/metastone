@@ -1,5 +1,4 @@
 {
-	"id": "minion_doomguard",
 	"name": "Doomguard",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -14,8 +13,7 @@
 		"spell": {
 			"class": "DiscardSpell",
 			"value": 2
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true,

@@ -1,5 +1,4 @@
 {
-	"id": "minion_sparring_partner",
 	"name": "Sparring Partner",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 		"spell": {
 			"class": "AddAttributeSpell",
 			"attribute": "TAUNT"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true,

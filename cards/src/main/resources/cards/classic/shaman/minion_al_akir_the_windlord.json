@@ -1,5 +1,4 @@
 {
-	"id": "minion_al_akir_the_windlord",
 	"name": "Al'Akir the Windlord",
 	"baseManaCost": 8,
 	"type": "MINION",
@@ -14,6 +13,7 @@
 		"TAUNT": true,
 		"WINDFURY": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

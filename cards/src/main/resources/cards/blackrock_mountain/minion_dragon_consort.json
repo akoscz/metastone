@@ -1,5 +1,4 @@
 {
-	"id": "minion_dragon_consort",
 	"name": "Dragon Consort",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -12,7 +11,7 @@
 	"battlecry": {
 		"spell": {
 			"class": "CardCostModifierSpell",
-			"target": "FRIENDLY_HERO",
+			"target": "FRIENDLY_PLAYER",
 			"cardCostModifier": {
 				"class": "CardCostModifier",
 				"cardType": "MINION",
@@ -25,8 +24,7 @@
 					"race": "DRAGON"
 				}
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

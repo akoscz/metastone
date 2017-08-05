@@ -1,5 +1,4 @@
 {
-	"id": "minion_ravenholdt_assassin",
 	"name": "Ravenholdt Assassin",
 	"baseManaCost": 7,
 	"type": "MINION",
@@ -11,6 +10,7 @@
 	"attributes": {
 		"STEALTH": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

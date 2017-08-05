@@ -1,5 +1,4 @@
 {
-	"id": "minion_mind_control_tech",
 	"name": "Mind Control Tech",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -19,8 +18,7 @@
 			"targetPlayer": "OPPONENT",
 			"operation": "GREATER_OR_EQUAL",
 			"value": 4
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

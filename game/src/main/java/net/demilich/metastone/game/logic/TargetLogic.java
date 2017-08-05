@@ -17,6 +17,7 @@ import net.demilich.metastone.game.entities.Actor;
 import net.demilich.metastone.game.entities.Entity;
 import net.demilich.metastone.game.entities.heroes.Hero;
 import net.demilich.metastone.game.entities.minions.Minion;
+import net.demilich.metastone.game.entities.minions.Summon;
 import net.demilich.metastone.game.targeting.EntityReference;
 import net.demilich.metastone.game.targeting.TargetSelection;
 
@@ -75,15 +76,18 @@ public class TargetLogic {
 			return environmentResult;
 		}
 		for (Player player : context.getPlayers()) {
+			if (player.getId() == targetId) {
+				return player;
+			}
 			if (player.getHero().getId() == targetId) {
 				return player.getHero();
 			} else if (player.getHero().getWeapon() != null && player.getHero().getWeapon().getId() == targetId) {
 				return player.getHero().getWeapon();
 			} 
 
-			for (Actor minion : player.getMinions()) {
-				if (minion.getId() == targetId) {
-					return minion;
+			for (Summon summon : player.getSummons()) {
+				if (summon.getId() == targetId) {
+					return summon;
 				}
 			}
 
@@ -235,7 +239,13 @@ public class TargetLogic {
 			targets.remove(source);
 			return targets;
 		} else if (targetKey == EntityReference.ADJACENT_MINIONS) {
-			return new ArrayList<>(context.getAdjacentMinions(player, source.getReference()));
+			return new ArrayList<>(context.getAdjacentSummons(player, source.getReference()));
+		} else if (targetKey == EntityReference.OPPOSITE_MINIONS) {
+			return new ArrayList<>(context.getOppositeSummons(player, source.getReference()));
+		} else if (targetKey == EntityReference.MINIONS_TO_LEFT) {
+			return new ArrayList<>(context.getLeftSummons(player, source.getReference()));
+		} else if (targetKey == EntityReference.MINIONS_TO_RIGHT) {
+			return new ArrayList<>(context.getRightSummons(player, source.getReference()));
 		} else if (targetKey == EntityReference.SELF) {
 			return singleTargetAsList(source);
 		} else if (targetKey == EntityReference.EVENT_TARGET) {
@@ -250,6 +260,8 @@ public class TargetLogic {
 			return singleTargetAsList(context.resolveSingleTarget((EntityReference) context.getEnvironment().get(Environment.ATTACKER_REFERENCE)));
 		} else if (targetKey == EntityReference.PENDING_CARD) {
 			return singleTargetAsList((Entity) context.getPendingCard());
+		} else if (targetKey == EntityReference.EVENT_CARD) {
+			return singleTargetAsList((Entity) context.getEventCard());
 		} else if (targetKey == EntityReference.FRIENDLY_WEAPON) {
 			if (player.getHero().getWeapon() != null) {
 				return singleTargetAsList(player.getHero().getWeapon());
@@ -267,6 +279,10 @@ public class TargetLogic {
 			return new ArrayList<>(player.getHand().toList());
 		} else if (targetKey == EntityReference.ENEMY_HAND) {
 			return new ArrayList<>(context.getOpponent(player).getHand().toList());
+		} else if (targetKey == EntityReference.FRIENDLY_PLAYER) {
+			return singleTargetAsList(player);
+		} else if (targetKey == EntityReference.ENEMY_PLAYER) {
+			return singleTargetAsList(context.getOpponent(player));
 		}
 
 		return singleTargetAsList(findEntity(context, targetKey));

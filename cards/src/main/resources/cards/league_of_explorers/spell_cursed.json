@@ -1,5 +1,4 @@
 {
-	"id": "spell_cursed",
 	"name": "Cursed!",
 	"baseManaCost": 2,
 	"type": "SPELL",
@@ -18,7 +17,8 @@
 		"spell": {
 			"class": "DamageSpell",
 			"target": "FRIENDLY_HERO",
-			"value": 2
+			"value": 2,
+			"ignoreSpellDamage": true
 		}
 	},
 	"collectible": false,

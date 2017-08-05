@@ -1,5 +1,4 @@
 {
-	"id": "minion_blackwing_corruptor",
 	"name": "Blackwing Corruptor",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -16,9 +15,11 @@
 		},
 		"condition": {
 			"class": "HoldsCardCondition",
-			"race": "DRAGON"
-		},
-		"resolvedLate": false
+			"cardFilter": {
+				"class": "CardFilter",
+				"race": "DRAGON"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

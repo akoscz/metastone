@@ -1,5 +1,4 @@
 {
-	"id": "minion_cyclopian_horror",
 	"name": "Cyclopian Horror",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -13,9 +12,8 @@
 			"class": "BuffSpell",
 			"target": "SELF",
 			"hpBonus": {
-				"class": "AttributeCounter",
-				"target": "ENEMY_MINIONS",
-				"attribute": "DEATHRATTLES"
+				"class": "EntityCounter",
+				"target": "ENEMY_MINIONS"
 			}
 		}
 	},

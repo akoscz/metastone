@@ -17,6 +17,20 @@ public class CardFilter extends EntityFilter {
 	public CardFilter(FilterDesc desc) {
 		super(desc);
 	}
+	
+	private boolean heroClassTest(GameContext context, Player player, Card card, HeroClass heroClass) {
+		if (heroClass == HeroClass.OPPONENT) {
+			heroClass = context.getOpponent(player).getHero().getHeroClass();
+		} else if (heroClass == HeroClass.SELF) {
+			heroClass = player.getHero().getHeroClass();
+		}
+		
+		if (heroClass != null && card.hasHeroClass(heroClass)) {
+			return false;
+		}
+		
+		return true;
+	}
 
 	@Override
 	protected boolean test(GameContext context, Player player, Entity entity) {
@@ -39,11 +53,19 @@ public class CardFilter extends EntityFilter {
 			return false;
 		}
 		
-		HeroClass heroClass = (HeroClass) desc.get(FilterArg.HERO_CLASS);
-		if (heroClass == HeroClass.OPPONENT) {
-			heroClass = context.getOpponent(player).getHero().getHeroClass();
+		HeroClass[] heroClasses = (HeroClass[]) desc.get(FilterArg.HERO_CLASSES);
+		if (heroClasses != null && heroClasses.length > 0) {
+			boolean test = false;
+			for (HeroClass heroClass : heroClasses) {
+				test |= !heroClassTest(context, player, card, heroClass);
+			}
+			if (!test) {
+				return false;
+			}
 		}
-		if (heroClass != null && heroClass != HeroClass.ANY && heroClass != card.getClassRestriction()) {
+		
+		HeroClass heroClass = (HeroClass) desc.get(FilterArg.HERO_CLASS);
+		if (heroClass != null && heroClassTest(context, player, card, heroClass)) {
 			return false;
 		}
 		
@@ -54,14 +76,14 @@ public class CardFilter extends EntityFilter {
 			}
 		}
 		Rarity rarity = (Rarity) desc.get(FilterArg.RARITY);
-		if (rarity != null && card.getRarity().isRarity(rarity)) {
+		if (rarity != null && !card.getRarity().isRarity(rarity)) {
 			return false;
 		}
 		
 		if (desc.contains(FilterArg.ATTRIBUTE) && desc.contains(FilterArg.OPERATION)) {
 			Attribute attribute = (Attribute) desc.get(FilterArg.ATTRIBUTE);
 			Operation operation = (Operation) desc.get(FilterArg.OPERATION);
-			if (operation == Operation.HAS) {
+			if (operation == Operation.HAS || operation == null) {
 				return card.hasAttribute(attribute);
 			}
 	

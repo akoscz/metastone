@@ -1,5 +1,4 @@
 {
-	"id": "minion_grimscale_oracle",
 	"name": "Grimscale Oracle",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -8,10 +7,10 @@
 	"heroClass": "ANY",
 	"rarity": "FREE",
 	"race": "MURLOC",
-	"description": "ALL other Murlocs have +1 Attack.",
+	"description": "Your other Murlocs have +1 Attack.",
 	"aura": {
 		"class": "BuffAura",
-		"target": "ALL_OTHER_MINIONS",
+		"target": "OTHER_FRIENDLY_MINIONS",
 		"attackBonus": 1,
 		"filter": {
 			"class": "RaceFilter",
@@ -19,6 +18,6 @@
 		}
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

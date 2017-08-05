@@ -1,5 +1,4 @@
 {
-	"id": "token_hound",
 	"name": "Hound",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -7,6 +6,7 @@
 	"baseHp": 1,
 	"heroClass": "HUNTER",
 	"rarity": "COMMON",
+	"description": "Charge",
 	"race": "BEAST",
 	"attributes": {
 		"CHARGE": true

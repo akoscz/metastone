@@ -1,5 +1,4 @@
 {
-	"id": "minion_frost_elemental",
 	"name": "Frost Elemental",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 		"spell": {
 			"class": "AddAttributeSpell",
 			"attribute": "FROZEN"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

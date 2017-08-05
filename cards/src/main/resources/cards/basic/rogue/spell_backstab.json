@@ -1,5 +1,4 @@
 {
-	"id": "spell_backstab",
 	"name": "Backstab",
 	"baseManaCost": 0,
 	"type": "SPELL",
@@ -16,6 +15,6 @@
 		}
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

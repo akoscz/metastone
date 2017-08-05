@@ -11,8 +11,8 @@ public class ControlsSecretCondition extends Condition {
 	}
 
 	@Override
-	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity target) {
-		return !player.getSecrets().isEmpty();
+	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity source, Entity target) {
+		return (player.getSecrets().size() - player.getQuests().size()) > 0;
 	}
 
 }

@@ -1,5 +1,4 @@
 {
-	"id": "minion_fireguard_destroyer",
 	"name": "Fireguard Destroyer",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -17,8 +16,7 @@
 				"min": 1,
 				"max": 4
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true,

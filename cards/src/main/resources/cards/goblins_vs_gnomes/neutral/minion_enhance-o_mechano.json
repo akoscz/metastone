@@ -1,5 +1,4 @@
 {
-	"id": "minion_enhance-o_mechano",
 	"name": "Enhance-o Mechano",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -27,8 +26,7 @@
 					"attribute": "DIVINE_SHIELD"
 				}
 			]
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

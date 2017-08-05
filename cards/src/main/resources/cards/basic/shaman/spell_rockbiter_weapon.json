@@ -1,7 +1,6 @@
 {
-	"id": "spell_rockbiter_weapon",
 	"name": "Rockbiter Weapon",
-	"baseManaCost": 1,
+	"baseManaCost": 2,
 	"type": "SPELL",
 	"heroClass": "SHAMAN",
 	"rarity": "FREE",
@@ -12,6 +11,6 @@
 		"value": 3
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

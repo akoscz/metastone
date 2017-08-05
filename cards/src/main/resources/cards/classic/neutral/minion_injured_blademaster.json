@@ -1,5 +1,4 @@
 {
-	"id": "minion_injured_blademaster",
 	"name": "Injured Blademaster",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 			"class": "DamageSpell",
 			"target": "SELF",
 			"value": 4
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

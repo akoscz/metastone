@@ -1,5 +1,4 @@
 {
-	"id": "spell_lock_and_load",
 	"name": "Lock and Load",
 	"baseManaCost": 2,
 	"type": "SPELL",
@@ -9,14 +8,14 @@
 	"targetSelection": "NONE",
 	"spell": {
 		"class": "AddSpellTriggerSpell",
-		"target": "FRIENDLY_HERO",
+		"target": "FRIENDLY_PLAYER",
 		"trigger": {
 			"eventTrigger": {
 				"class": "SpellCastedTrigger",
 				"sourcePlayer": "SELF"
 			},
 			"spell": {
-				"class": "ReceiveRandomCollectibleCardSpell",
+				"class": "ReceiveCardSpell",
 				"cardFilter": {
 					"class": "CardFilter",
 					"heroClass": "HUNTER"

@@ -1,5 +1,4 @@
 {
-	"id": "minion_reliquary_seeker",
 	"name": "Reliquary Seeker",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -21,8 +20,7 @@
 			"targetPlayer": "SELF",
 			"operation": "EQUAL",
 			"value": 7
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

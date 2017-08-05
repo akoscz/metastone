@@ -1,5 +1,4 @@
 {
-	"id": "minion_darkshire_councilman",
 	"name": "Darkshire Councilman",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -10,8 +9,9 @@
 	"description": "After you summon a minion, gain +1 Attack.",
 	"trigger": {
 		"eventTrigger": {
-			"class": "MinionSummonedTrigger",
-			"targetPlayer": "SELF"
+			"class": "AfterMinionSummonedTrigger",
+			"targetPlayer": "SELF",
+			"hostTargetType": "IGNORE_AS_TARGET"
 		},
 		"spell": {
 			"class": "BuffSpell",

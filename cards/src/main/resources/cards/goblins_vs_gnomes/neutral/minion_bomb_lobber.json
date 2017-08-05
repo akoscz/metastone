@@ -1,5 +1,4 @@
 {
-	"id": "minion_bomb_lobber",
 	"name": "Bomb Lobber",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -14,8 +13,7 @@
 			"target": "ENEMY_MINIONS",
 			"value": 4,
 			"howMany": 1
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

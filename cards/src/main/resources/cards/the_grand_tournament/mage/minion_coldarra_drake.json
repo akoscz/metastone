@@ -1,5 +1,4 @@
 {
-	"id": "minion_coldarra_drake",
 	"name": "Coldarra Drake",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -7,6 +6,7 @@
 	"baseHp": 6,
 	"heroClass": "MAGE",
 	"rarity": "EPIC",
+	"description": "You can use your Hero Power any number of times.",
 	"race": "DRAGON",
 	"attributes": {
 		"HERO_POWER_USAGES": -1

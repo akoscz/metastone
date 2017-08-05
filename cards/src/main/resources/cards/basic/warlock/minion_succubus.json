@@ -1,5 +1,4 @@
 {
-	"id": "minion_succubus",
 	"name": "Succubus",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -13,13 +12,12 @@
 		"spell": {
 			"class": "DiscardSpell",
 			"value": 1
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

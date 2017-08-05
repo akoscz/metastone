@@ -1,5 +1,4 @@
 {
-	"id": "minion_blade_of_cthun",
 	"name": "Blade of C'Thun",
 	"baseManaCost": 9,
 	"type": "MINION",
@@ -54,7 +53,7 @@
 				},
 				{
 					"class": "ModifyAttributeSpell",
-					"target": "FRIENDLY_HERO",
+					"target": "FRIENDLY_PLAYER",
 					"attribute": "CTHUN_ATTACK_BUFF",
 					"value": {
 						"class": "AttributeValueProvider",
@@ -64,7 +63,7 @@
 				},
 				{
 					"class": "ModifyAttributeSpell",
-					"target": "FRIENDLY_HERO",
+					"target": "FRIENDLY_PLAYER",
 					"attribute": "CTHUN_HEALTH_BUFF",
 					"value": {
 						"class": "AttributeValueProvider",

@@ -1,6 +1,5 @@
 {
-	"id": "minion_alarm-o-bot",
-	"name": "Alarm-o-bot",
+	"name": "Alarm-o-Bot",
 	"baseManaCost": 3,
 	"type": "MINION",
 	"baseAttack": 0,
@@ -15,7 +14,10 @@
 			"targetPlayer": "SELF",
 			"queueCondition": {
 				"class": "HoldsCardCondition",
-				"cardType": "MINION"
+				"cardFilter": {
+					"class": "CardFilter",
+					"cardType": "MINION"
+				}
 			}
 		},
 		"spell": {

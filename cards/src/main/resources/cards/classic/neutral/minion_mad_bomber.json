@@ -1,5 +1,4 @@
 {
-	"id": "minion_mad_bomber",
 	"name": "Mad Bomber",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -15,8 +14,7 @@
 			"value": 1,
 			"howMany": 3,
 			"randomTarget": true
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

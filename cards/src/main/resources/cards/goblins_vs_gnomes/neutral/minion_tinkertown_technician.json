@@ -1,5 +1,4 @@
 {
-	"id": "minion_tinkertown_technician",
 	"name": "Tinkertown Technician",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -33,10 +32,12 @@
 			]
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "MECH"
-		},
-		"resolvedLate": false
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "MECH"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

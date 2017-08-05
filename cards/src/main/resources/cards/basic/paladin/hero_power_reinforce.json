@@ -1,5 +1,4 @@
 {
-	"id": "hero_power_reinforce",
 	"name": "Reinforce",
 	"baseManaCost": 2,
 	"type": "HERO_POWER",
@@ -17,6 +16,6 @@
 		"value": 7
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

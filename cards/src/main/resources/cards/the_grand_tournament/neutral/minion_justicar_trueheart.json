@@ -1,5 +1,4 @@
 {
-	"id": "minion_justicar_trueheart",
 	"name": "Justicar Trueheart",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -88,8 +87,7 @@
 					"cardId": "hero_power_armor_up"
 				}
 			]
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

@@ -1,5 +1,4 @@
 {
-	"id": "spell_dark_bargain",
 	"name": "Dark Bargain",
 	"baseManaCost": 6,
 	"type": "SPELL",
@@ -11,19 +10,11 @@
 		"class": "MetaSpell",
 		"spells": [
 			{
-				"class": "DestroySpell",
+				"class": "MultiTargetSpell",
 				"target": "ENEMY_MINIONS",
-				"randomTarget": true
-			},
-			{
-				"class": "DestroySpell",
-				"target": "ENEMY_MINIONS",
-				"randomTarget": true,
-				"filter": {
-					"class": "AttributeFilter",
-					"attribute": "DESTROYED",
-					"operation": "HAS",
-					"invert": true
+				"value": 2,
+				"spell": {
+					"class": "DestroySpell"
 				}
 			},
 			{

@@ -1,5 +1,4 @@
 {
-	"id": "minion_alexstraszas_champion",
 	"name": "Alexstrasza's Champion",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -25,9 +24,11 @@
 		},
 		"condition": {
 			"class": "HoldsCardCondition",
-			"race": "DRAGON"
-		},
-		"resolvedLate": false
+			"cardFilter": {
+				"class": "CardFilter",
+				"race": "DRAGON"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

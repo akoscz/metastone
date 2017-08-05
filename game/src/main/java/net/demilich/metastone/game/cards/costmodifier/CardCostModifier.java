@@ -19,7 +19,6 @@ import net.demilich.metastone.game.spells.desc.trigger.EventTriggerDesc;
 import net.demilich.metastone.game.spells.desc.valueprovider.AlgebraicOperation;
 import net.demilich.metastone.game.spells.trigger.GameEventTrigger;
 import net.demilich.metastone.game.spells.trigger.IGameEventListener;
-import net.demilich.metastone.game.spells.trigger.TriggerLayer;
 import net.demilich.metastone.game.targeting.EntityReference;
 
 public class CardCostModifier extends CustomCloneable implements IGameEventListener {
@@ -109,11 +108,6 @@ public class CardCostModifier extends CustomCloneable implements IGameEventListe
 		return hostReference;
 	}
 
-	@Override
-	public TriggerLayer getLayer() {
-		return TriggerLayer.DEFAULT;
-	}
-
 	public int getMinValue() {
 		return desc.getInt(CardCostModifierArg.MIN_VALUE);
 	}
@@ -180,30 +174,7 @@ public class CardCostModifier extends CustomCloneable implements IGameEventListe
 		AlgebraicOperation operation = (AlgebraicOperation) desc.get(CardCostModifierArg.OPERATION);
 		int value = desc.getInt(CardCostModifierArg.VALUE);
 		if (operation != null) {
-			switch (operation) {
-			case ADD:
-				return currentManaCost + value;
-			case DIVIDE:
-				if (value == 0) {
-					value = 1;
-				}
-				return currentManaCost / value;
-			case MODULO:
-				if (value == 0) {
-					value = 1;
-				}
-				return currentManaCost % value;
-			case MULTIPLY:
-				return currentManaCost * value;
-			case NEGATE:
-				return -currentManaCost;
-			case SET:
-				return value;
-			case SUBTRACT:
-				return currentManaCost - value;
-			default:
-				break;
-			}
+			return operation.performOperation(currentManaCost, value);
 		}
 		int modifiedManaCost = currentManaCost + desc.getInt(CardCostModifierArg.VALUE);
 		return modifiedManaCost;
@@ -248,6 +219,16 @@ public class CardCostModifier extends CustomCloneable implements IGameEventListe
 			return expirationTrigger.canFireCondition(event);
 		}
 		return true;
+	}
+
+	@Override
+	public boolean hasCounter() {
+		return false;
+	}
+
+	@Override
+	public void countDown() {
+		
 	}
 
 }

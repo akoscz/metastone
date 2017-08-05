@@ -1,5 +1,4 @@
 {
-	"id": "minion_drakonid_crusher",
 	"name": "Drakonid Crusher",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -22,8 +21,7 @@
 			"attribute": "HP",
 			"operation": "LESS_OR_EQUAL",
 			"value": 15
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

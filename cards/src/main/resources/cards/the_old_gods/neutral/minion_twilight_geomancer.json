@@ -1,5 +1,4 @@
 {
-	"id": "minion_twilight_geomancer",
 	"name": "Twilight Geomancer",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -32,7 +31,7 @@
 				},
 				{
 					"class": "AddAttributeSpell",
-					"target": "FRIENDLY_HERO",
+					"target": "FRIENDLY_PLAYER",
 					"attribute": "CTHUN_TAUNT"
 				}
 			]

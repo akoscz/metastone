@@ -1,5 +1,4 @@
 {
-	"id": "minion_cairne_bloodhoof",
 	"name": "Cairne Bloodhoof",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -15,6 +14,7 @@
 	"attributes": {
 		"DEATHRATTLES": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

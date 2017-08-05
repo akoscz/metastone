@@ -1,5 +1,4 @@
 {
-	"id": "minion_crazed_alchemist",
 	"name": "Crazed Alchemist",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -12,8 +11,7 @@
 		"targetSelection": "MINIONS",
 		"spell": {
 			"class": "SwapAttackAndHpSpell"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

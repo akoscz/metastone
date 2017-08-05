@@ -1,5 +1,4 @@
 {
-	"id": "minion_djinni_of_zephyrs",
 	"name": "Djinni of Zephyrs",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -10,8 +9,7 @@
 	"description": "After you target another friendly minion with a spell, cast it on this one.",
 	"trigger": {
 		"eventTrigger": {
-			"class": "TargetAcquisitionTrigger",
-			"actionType": "SPELL",
+			"class": "AfterSpellCastedTrigger",
 			"sourcePlayer": "SELF",
 			"targetPlayer": "SELF",
 			"targetEntityType": "MINION",

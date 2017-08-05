@@ -1,5 +1,4 @@
 {
-	"id": "minion_leper_gnome",
 	"name": "Leper Gnome",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -16,6 +15,7 @@
 	"attributes": {
 		"DEATHRATTLES": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

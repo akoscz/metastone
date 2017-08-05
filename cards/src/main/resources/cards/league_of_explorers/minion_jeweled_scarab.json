@@ -1,5 +1,4 @@
 {
-	"id": "minion_jeweled_scarab",
 	"name": "Jeweled Scarab",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -21,8 +20,7 @@
 				"class": "CardFilter",
 				"manaCost": 3
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

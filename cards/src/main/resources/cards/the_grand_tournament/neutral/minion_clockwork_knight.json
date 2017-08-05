@@ -1,5 +1,4 @@
 {
-	"id": "minion_clockwork_knight",
 	"name": "Clockwork Knight",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -19,8 +18,7 @@
 				"class": "RaceFilter",
 				"race": "MECH"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

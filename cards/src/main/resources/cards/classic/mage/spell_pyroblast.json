@@ -1,5 +1,4 @@
 {
-	"id": "spell_pyroblast",
 	"name": "Pyroblast",
 	"baseManaCost": 10,
 	"type": "SPELL",
@@ -11,6 +10,7 @@
 		"class": "DamageSpell",
 		"value": 10
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

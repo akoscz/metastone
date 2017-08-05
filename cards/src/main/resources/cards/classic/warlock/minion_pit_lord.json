@@ -1,5 +1,4 @@
 {
-	"id": "minion_pit_lord",
 	"name": "Pit Lord",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -14,8 +13,7 @@
 			"class": "DamageSpell",
 			"target": "FRIENDLY_HERO",
 			"value": 5
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

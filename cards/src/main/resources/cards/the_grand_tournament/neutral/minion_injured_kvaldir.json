@@ -1,5 +1,4 @@
 {
-	"id": "minion_injured_kvaldir",
 	"name": "Injured Kvaldir",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 			"class": "DamageSpell",
 			"target": "SELF",
 			"value": 3
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

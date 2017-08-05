@@ -1,5 +1,4 @@
 {
-	"id": "minion_recombobulator",
 	"name": "Recombobulator",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -20,8 +19,7 @@
 					"attribute": "BASE_MANA_COST"
 				}
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

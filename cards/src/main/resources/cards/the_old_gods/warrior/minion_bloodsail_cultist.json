@@ -1,5 +1,4 @@
 {
-	"id": "minion_bloodsail_cultist",
 	"name": "Bloodsail Cultist",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -13,13 +12,16 @@
 		"targetSelection": "NONE",
 		"spell": {
 			"class": "BuffWeaponSpell",
-			"targetPlayer": "SELF",
-			"damage": 1,
-			"durability": 1
+			"target": "FRIENDLY_WEAPON",
+			"attackBonus": 1,
+			"hpBonus": 1
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "PIRATE"
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "PIRATE"
+			}
 		}
 	},
 	"attributes": {

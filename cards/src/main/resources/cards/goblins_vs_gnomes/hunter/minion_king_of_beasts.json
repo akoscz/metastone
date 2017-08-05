@@ -1,5 +1,4 @@
 {
-	"id": "minion_king_of_beasts",
 	"name": "King of Beasts",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -21,8 +20,7 @@
 					"race": "BEAST"
 				}
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true,

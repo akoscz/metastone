@@ -1,5 +1,4 @@
 {
-	"id": "token_searing_totem",
 	"name": "Searing Totem",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -10,6 +9,6 @@
 	"race": "TOTEM",
 	"description": "",
 	"collectible": false,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

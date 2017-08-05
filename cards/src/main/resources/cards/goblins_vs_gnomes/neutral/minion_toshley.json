@@ -1,5 +1,4 @@
 {
-	"id": "minion_toshley",
 	"name": "Toshley",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -20,8 +19,7 @@
 				"spell_time_rewinder",
 				"spell_whirling_blades"
 			]
-		},
-		"resolvedLate": false
+		}
 	},
 	"deathrattle": {
 		"class": "ReceiveRandomCardSpell",

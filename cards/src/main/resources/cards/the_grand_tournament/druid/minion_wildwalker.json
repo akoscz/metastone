@@ -1,5 +1,4 @@
 {
-	"id": "minion_wildwalker",
 	"name": "Wildwalker",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -17,8 +16,7 @@
 				"class": "RaceFilter",
 				"race": "BEAST"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

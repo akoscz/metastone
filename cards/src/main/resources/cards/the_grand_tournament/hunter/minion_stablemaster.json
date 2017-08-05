@@ -1,5 +1,4 @@
 {
-	"id": "minion_stablemaster",
 	"name": "Stablemaster",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -20,8 +19,7 @@
 			"revertTrigger": {
 				"class": "TurnEndTrigger"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

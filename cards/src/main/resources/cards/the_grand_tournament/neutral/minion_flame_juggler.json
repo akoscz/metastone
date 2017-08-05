@@ -1,5 +1,4 @@
 {
-	"id": "minion_flame_juggler",
 	"name": "Flame Juggler",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -15,8 +14,7 @@
 			"target": "ENEMY_CHARACTERS",
 			"value": 1,
 			"howMany": 1
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

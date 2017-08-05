@@ -1,5 +1,4 @@
 {
-	"id": "spell_mass_dispel",
 	"name": "Mass Dispel",
 	"baseManaCost": 4,
 	"type": "SPELL",
@@ -20,6 +19,7 @@
 			}
 		]
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

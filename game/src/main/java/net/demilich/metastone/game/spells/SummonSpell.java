@@ -5,7 +5,7 @@ import java.util.Map;
 import net.demilich.metastone.game.GameContext;
 import net.demilich.metastone.game.Player;
 import net.demilich.metastone.game.cards.Card;
-import net.demilich.metastone.game.cards.MinionCard;
+import net.demilich.metastone.game.cards.SummonCard;
 import net.demilich.metastone.game.entities.Entity;
 import net.demilich.metastone.game.entities.minions.RelativeToSource;
 import net.demilich.metastone.game.spells.desc.SpellArg;
@@ -14,12 +14,12 @@ import net.demilich.metastone.game.targeting.EntityReference;
 
 public class SummonSpell extends Spell {
 
-	public static SpellDesc create(MinionCard... minionCards) {
-		return create(TargetPlayer.SELF, minionCards);
+	public static SpellDesc create(SummonCard... summonCards) {
+		return create(TargetPlayer.SELF, summonCards);
 	}
 
-	public static SpellDesc create(RelativeToSource relativeBoardPosition, MinionCard... minionCards) {
-		return create(TargetPlayer.SELF, relativeBoardPosition, minionCards);
+	public static SpellDesc create(RelativeToSource relativeBoardPosition, SummonCard... summonCards) {
+		return create(TargetPlayer.SELF, relativeBoardPosition, summonCards);
 	}
 
 	public static SpellDesc create(String minionCard) {
@@ -36,13 +36,17 @@ public class SummonSpell extends Spell {
 		return new SpellDesc(arguments);
 	}
 
-	public static SpellDesc create(TargetPlayer targetPlayer, MinionCard... minionCards) {
-		return create(targetPlayer, null, minionCards);
+	public static SpellDesc create(TargetPlayer targetPlayer, SummonCard... summonCards) {
+		return create(targetPlayer, null, summonCards);
 	}
 
-	public static SpellDesc create(TargetPlayer targetPlayer, RelativeToSource relativeBoardPosition, MinionCard... minionCards) {
+	public static SpellDesc create(TargetPlayer targetPlayer, RelativeToSource relativeBoardPosition, SummonCard... summonCards) {
 		Map<SpellArg, Object> arguments = SpellDesc.build(SummonSpell.class);
-		arguments.put(SpellArg.CARD, minionCards);
+		String[] cardNames = new String[summonCards.length];
+		for (int i = 0; i < summonCards.length; i++) {
+			cardNames[i] = summonCards[i].getCardId();
+		}
+		arguments.put(SpellArg.CARDS, cardNames);
 		arguments.put(SpellArg.TARGET, EntityReference.NONE);
 		arguments.put(SpellArg.TARGET_PLAYER, targetPlayer);
 		if (relativeBoardPosition != null) {
@@ -55,10 +59,10 @@ public class SummonSpell extends Spell {
 	protected void onCast(GameContext context, Player player, SpellDesc desc, Entity source, Entity target) {
 		int boardPosition = SpellUtils.getBoardPosition(context, player, desc, source);
 		int count = desc.getValue(SpellArg.VALUE, context, player, target, source, 1);
-		for (Card card : SpellUtils.getCards(desc)) {
+		for (Card card : SpellUtils.getCards(context, desc)) {
 			for (int i = 0; i < count; i++) {
-				MinionCard minionCard = count == 1 ? (MinionCard) card : (MinionCard) card.clone();
-				context.getLogic().summon(player.getId(), minionCard.summon(), null, boardPosition, false);
+				SummonCard summonCard = (SummonCard) card.clone();
+				context.getLogic().summon(player.getId(), summonCard.summon(), null, boardPosition, false);
 			}
 		}
 	}

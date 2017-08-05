@@ -1,5 +1,4 @@
 {
-	"id": "minion_mimirons_head",
 	"name": "Mimiron's Head",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -14,9 +13,12 @@
 			"class": "TurnStartTrigger",
 			"targetPlayer": "SELF",
 			"fireCondition": {
-				"class": "RaceOnBoardCondition",
-				"race": "MECH",
-				"value": 3
+				"class": "MinionOnBoardCondition",
+				"value": 3,
+				"cardFilter": {
+					"class": "RaceFilter",
+					"race": "MECH"
+				}
 			}
 		},
 		"spell": {
@@ -29,6 +31,9 @@
 						"class": "RaceFilter",
 						"race": "MECH"
 					}
+				},
+				{
+					"class": "ForceDeathPhaseSpell"
 				},
 				{
 					"class": "SummonSpell",

@@ -1,6 +1,5 @@
 {
-	"id": "minion_chogall",
-	"name": "Cho'Gall",
+	"name": "Cho'gall",
 	"baseManaCost": 7,
 	"type": "MINION",
 	"baseAttack": 7,
@@ -12,7 +11,7 @@
 		"targetSelection": "NONE",
 		"spell": {
 			"class": "AddAttributeSpell",
-			"target": "FRIENDLY_HERO",
+			"target": "FRIENDLY_PLAYER",
 			"attribute": "SPELLS_COST_HEALTH",
 			"revertTrigger": {
 				"class": "TurnEndTrigger"

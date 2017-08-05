@@ -1,5 +1,4 @@
 {
-	"id": "minion_kirin_tor_mage",
 	"name": "Kirin Tor Mage",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -11,7 +10,7 @@
 	"battlecry": {
 		"spell": {
 			"class": "CardCostModifierSpell",
-			"target": "FRIENDLY_HERO",
+			"target": "FRIENDLY_PLAYER",
 			"cardCostModifier": {
 				"class": "OneTurnCostModifier",
 				"cardType": "SPELL",
@@ -22,8 +21,7 @@
 				},
 				"requiredAttribute": "SECRET"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

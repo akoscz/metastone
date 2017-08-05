@@ -1,5 +1,4 @@
 {
-	"id": "minion_twilight_whelp",
 	"name": "Twilight Whelp",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -17,9 +16,11 @@
 		},
 		"condition": {
 			"class": "HoldsCardCondition",
-			"race": "DRAGON"
-		},
-		"resolvedLate": false
+			"cardFilter": {
+				"class": "CardFilter",
+				"race": "DRAGON"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

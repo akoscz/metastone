@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import net.demilich.metastone.game.events.GameEvent;
 import net.demilich.metastone.game.events.GameEventType;
+import net.demilich.metastone.game.spells.aura.Aura;
 import net.demilich.metastone.game.targeting.EntityReference;
 import net.demilich.metastone.utils.IDisposable;
 
@@ -60,9 +61,6 @@ public class TriggerManager implements Cloneable, IDisposable {
 			if (trigger.isExpired()) {
 				removeTriggers.add(trigger);
 			}
-			if (trigger.getLayer() != event.getTriggerLayer()) {
-				continue;
-			}
 
 			if (!trigger.interestedIn(event.getEventType())) {
 				continue;
@@ -74,7 +72,10 @@ public class TriggerManager implements Cloneable, IDisposable {
 
 		for (IGameEventListener trigger : eventTriggers) {
 			if (trigger.canFireCondition(event) && triggers.contains(trigger)) {
-				trigger.onGameEvent(event);
+				trigger.countDown();
+				if (!trigger.hasCounter()) {
+					trigger.onGameEvent(event);
+				}
 			}
 
 			// we need to double check here if the trigger still exists;
@@ -118,9 +119,12 @@ public class TriggerManager implements Cloneable, IDisposable {
 		}
 	}
 
-	public void removeTriggersAssociatedWith(EntityReference entityReference) {
+	public void removeTriggersAssociatedWith(EntityReference entityReference, boolean removeAuras) {
 		for (IGameEventListener trigger : getListSnapshot(triggers)) {
 			if (trigger.getHostReference().equals(entityReference)) {
+				if (!removeAuras && trigger instanceof Aura) {
+					continue;
+				}
 				triggers.remove(trigger);
 			}
 		}

@@ -1,5 +1,4 @@
 {
-	"id": "minion_harvest_golem",
 	"name": "Harvest Golem",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -16,6 +15,7 @@
 	"attributes": {
 		"DEATHRATTLES": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

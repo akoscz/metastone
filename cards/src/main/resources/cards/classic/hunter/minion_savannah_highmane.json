@@ -1,5 +1,4 @@
 {
-	"id": "minion_savannah_highmane",
 	"name": "Savannah Highmane",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -19,6 +18,7 @@
 	"attributes": {
 		"DEATHRATTLES": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

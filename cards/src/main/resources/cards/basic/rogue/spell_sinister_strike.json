@@ -1,5 +1,4 @@
 {
-	"id": "spell_sinister_strike",
 	"name": "Sinister Strike",
 	"baseManaCost": 1,
 	"type": "SPELL",
@@ -12,6 +11,7 @@
 		"target": "ENEMY_HERO",
 		"value": 3
 	},
-	"set": "CLASSIC",
+	"collectible": true,
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

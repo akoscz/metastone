@@ -1,5 +1,4 @@
 {
-	"id": "minion_upgraded_repair_bot",
 	"name": "Upgraded Repair Bot",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -18,8 +17,7 @@
 				"class": "RaceFilter",
 				"race": "MECH"
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

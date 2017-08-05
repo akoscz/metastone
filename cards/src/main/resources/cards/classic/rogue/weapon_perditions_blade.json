@@ -1,5 +1,4 @@
 {
-	"id": "weapon_perditions_blade",
 	"name": "Perdition's Blade",
 	"baseManaCost": 3,
 	"type": "WEAPON",
@@ -21,11 +20,11 @@
 				"class": "DamageSpell",
 				"value": 2
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
-		"BATTLECRY": true
+		"BATTLECRY": true,
+		"COMBO": true
 	},
 	"collectible": true,
 	"set": "CLASSIC",

@@ -1,5 +1,4 @@
 {
-	"id": "minion_warsong_commander",
 	"name": "Warsong Commander",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -19,6 +18,6 @@
 		}
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

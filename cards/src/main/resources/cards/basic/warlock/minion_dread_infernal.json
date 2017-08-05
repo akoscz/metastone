@@ -1,5 +1,4 @@
 {
-	"id": "minion_dread_infernal",
 	"name": "Dread Infernal",
 	"baseManaCost": 6,
 	"type": "MINION",
@@ -14,13 +13,12 @@
 			"class": "DamageSpell",
 			"target": "ALL_OTHER_CHARACTERS",
 			"value": 1
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true
 	},
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

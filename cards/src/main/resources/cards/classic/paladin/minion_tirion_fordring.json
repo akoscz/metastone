@@ -1,5 +1,4 @@
 {
-	"id": "minion_tirion_fordring",
 	"name": "Tirion Fordring",
 	"baseManaCost": 8,
 	"type": "MINION",
@@ -17,6 +16,7 @@
 		"DIVINE_SHIELD": true,
 		"TAUNT": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

@@ -23,6 +23,7 @@ import net.demilich.metastone.game.behaviour.PlayRandomBehaviour;
 import net.demilich.metastone.game.behaviour.heuristic.WeightedHeuristic;
 import net.demilich.metastone.game.behaviour.human.HumanBehaviour;
 import net.demilich.metastone.game.behaviour.threat.GameStateValueBehaviour;
+import net.demilich.metastone.game.behaviour.FlatMonteCarlo;
 import net.demilich.metastone.game.cards.Card;
 import net.demilich.metastone.game.cards.CardCatalogue;
 import net.demilich.metastone.game.cards.HeroCard;
@@ -99,19 +100,19 @@ public class PlayerConfigView extends VBox {
 				if (deck.getHeroClass() != HeroClass.DECK_COLLECTION) {
 					continue;
 				}
-				if (deckFormat != null && deckFormat.inSet(deck)) {
+				if (deckFormat != null && deckFormat.isInFormat(deck)) {
 					deckList.add(deck);
 				}
 			}
 		} else {
-			Deck randomDeck = DeckFactory.getRandomDeck(heroClass);
+			Deck randomDeck = DeckFactory.getRandomDeck(heroClass, deckFormat);
 			deckList.add(randomDeck);
 			for (Deck deck : decks) {
 				if (deck.getHeroClass() == HeroClass.DECK_COLLECTION) {
 					continue;
 				}
 				if (deck.getHeroClass() == heroClass || deck.getHeroClass() == HeroClass.ANY) {
-					if (deckFormat != null && deckFormat.inSet(deck)) {
+					if (deckFormat != null && deckFormat.isInFormat(deck)) {
 						deckList.add(deck);
 					}
 				}
@@ -169,6 +170,7 @@ public class PlayerConfigView extends VBox {
 
 		behaviourList.add(new GreedyOptimizeMove(new WeightedHeuristic()));
 		behaviourList.add(new NoAggressionBehaviour());
+		behaviourList.add(new FlatMonteCarlo(100));
 
 		behaviourBox.setItems(behaviourList);
 		behaviourBox.valueProperty().addListener(this::onBehaviourChanged);

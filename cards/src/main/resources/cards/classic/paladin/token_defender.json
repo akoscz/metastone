@@ -1,5 +1,4 @@
 {
-	"id": "token_defender",
 	"name": "Defender",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -7,6 +6,7 @@
 	"baseHp": 1,
 	"heroClass": "PALADIN",
 	"rarity": "COMMON",
+	"description": "",
 	"collectible": false,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1

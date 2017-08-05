@@ -1,5 +1,4 @@
 {
-	"id": "spell_mulch",
 	"name": "Mulch",
 	"baseManaCost": 3,
 	"type": "SPELL",
@@ -14,7 +13,7 @@
 				"class": "DestroySpell"
 			},
 			{
-				"class": "ReceiveRandomCollectibleCardSpell",
+				"class": "ReceiveCardSpell",
 				"targetPlayer": "OPPONENT",
 				"cardFilter": {
 					"class": "CardFilter",

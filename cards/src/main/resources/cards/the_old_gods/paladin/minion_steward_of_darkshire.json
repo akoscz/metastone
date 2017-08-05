@@ -1,5 +1,4 @@
 {
-	"id": "minion_steward_of_darkshire",
 	"name": "Steward of Darkshire",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -10,7 +9,7 @@
 	"description": "Whenever you summon a minion with 1 health, give it Divine Shield.",
 	"trigger": {
 		"eventTrigger": {
-			"class": "MinionSummonedTrigger",
+			"class": "BeforeMinionSummonedTrigger",
 			"targetPlayer": "SELF",
 			"queueCondition": {
 				"class": "AttributeCondition",

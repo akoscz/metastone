@@ -1,5 +1,4 @@
 {
-	"id": "minion_wyrmrest_agent",
 	"name": "Wyrmrest Agent",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -25,9 +24,11 @@
 		},
 		"condition": {
 			"class": "HoldsCardCondition",
-			"race": "DRAGON"
-		},
-		"resolvedLate": false
+			"cardFilter": {
+				"class": "CardFilter",
+				"race": "DRAGON"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

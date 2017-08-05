@@ -1,5 +1,4 @@
 {
-	"id": "minion_goblin_blastmage",
 	"name": "Goblin Blastmage",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -15,10 +14,12 @@
 			"howMany": 4
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "MECH"
-		},
-		"resolvedLate": false
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "MECH"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

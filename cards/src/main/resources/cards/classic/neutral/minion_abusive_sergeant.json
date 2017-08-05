@@ -1,9 +1,8 @@
 {
-	"id": "minion_abusive_sergeant",
 	"name": "Abusive Sergeant",
 	"baseManaCost": 1,
 	"type": "MINION",
-	"baseAttack": 2,
+	"baseAttack": 1,
 	"baseHp": 1,
 	"heroClass": "ANY",
 	"rarity": "COMMON",
@@ -18,6 +17,7 @@
 	"attributes": {
 		"BATTLECRY": true
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

@@ -1,5 +1,4 @@
 {
-	"id": "minion_king_mukla",
 	"name": "King Mukla",
 	"baseManaCost": 3,
 	"type": "MINION",
@@ -17,8 +16,7 @@
 				"spell_bananas",
 				"spell_bananas"
 			]
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

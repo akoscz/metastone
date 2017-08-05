@@ -8,6 +8,8 @@ import net.demilich.nittygrittymvc.interfaces.INotification;
 import net.demilich.metastone.GameNotification;
 import net.demilich.metastone.game.cards.Card;
 import net.demilich.metastone.game.decks.Deck;
+import net.demilich.metastone.game.decks.DeckFormat;
+import net.demilich.metastone.game.decks.validation.DefaultDeckValidator;
 import net.demilich.metastone.gui.dialog.DialogNotification;
 import net.demilich.metastone.gui.dialog.DialogType;
 
@@ -27,6 +29,8 @@ public class DeckBuilderMediator extends Mediator<GameNotification> {
 	public void handleNotification(final INotification<GameNotification> notification) {
 		switch (notification.getId()) {
 		case CREATE_NEW_DECK:
+			DeckProxy deckProxy = (DeckProxy) getFacade().retrieveProxy(DeckProxy.NAME);
+			deckProxy.setActiveDeckValidator(new DefaultDeckValidator());
 			view.createNewDeck();
 			break;
 		case EDIT_DECK:
@@ -45,6 +49,10 @@ public class DeckBuilderMediator extends Mediator<GameNotification> {
 			DialogNotification dialogNotification = new DialogNotification("Name your deck", "Please enter a valid name for this deck.",
 					DialogType.WARNING);
 			getFacade().notifyObservers(dialogNotification);
+			break;
+		case DECK_FORMATS_LOADED:
+			List<DeckFormat> deckFormats = (List<DeckFormat>) notification.getBody();
+			view.injectDeckFormats(deckFormats);
 			break;
 		case DUPLICATE_DECK_NAME:
 			getFacade().notifyObservers(new DialogNotification("Duplicate deck name",
@@ -73,6 +81,7 @@ public class DeckBuilderMediator extends Mediator<GameNotification> {
 	public void onRegister() {
 		getFacade().sendNotification(GameNotification.SHOW_VIEW, view);
 		getFacade().sendNotification(GameNotification.LOAD_DECKS);
+		getFacade().sendNotification(GameNotification.LOAD_DECK_FORMATS);
 	}
 
 }

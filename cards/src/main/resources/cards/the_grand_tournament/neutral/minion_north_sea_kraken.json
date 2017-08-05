@@ -1,5 +1,4 @@
 {
-	"id": "minion_north_sea_kraken",
 	"name": "North Sea Kraken",
 	"baseManaCost": 9,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 		"spell": {
 			"class": "DamageSpell",
 			"value": 4
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

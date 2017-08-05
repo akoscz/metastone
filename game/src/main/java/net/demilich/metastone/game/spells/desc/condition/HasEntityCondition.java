@@ -13,11 +13,11 @@ public class HasEntityCondition extends Condition {
 	}
 
 	@Override
-	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity target) {
-		EntityReference source = (EntityReference) desc.get(ConditionArg.TARGET);
+	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity source, Entity target) {
+		EntityReference targetReference = (EntityReference) desc.get(ConditionArg.TARGET);
 		EntityFilter filter = (EntityFilter) desc.get(ConditionArg.FILTER);
-		for (Entity entity : context.resolveTarget(player, null, source)) {
-			if (filter.matches(context, player, entity)) {
+		for (Entity entity : context.resolveTarget(player, source, targetReference)) {
+			if (filter == null || filter.matches(context, player, entity)) {
 				return true;
 			}
 		}

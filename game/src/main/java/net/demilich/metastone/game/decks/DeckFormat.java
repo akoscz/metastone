@@ -15,25 +15,33 @@ public class DeckFormat {
 	public DeckFormat() {
 		sets = new ArrayList<CardSet>();
 	}
-	
+
 	public void addSet(CardSet cardSet) {
 		sets.add(cardSet);
 	}
 
-	public boolean inSet(Deck deck) {
+	public boolean isInFormat(Card card) {
+		if (sets.contains(card.getCardSet())) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isInFormat(CardSet set) {
+		return sets.contains(set);
+	}
+
+	public boolean isInFormat(Deck deck) {
 		for (Card card : deck.getCards()) {
-			if (!sets.contains(card.getCardSet())) {
+			if (!isInFormat(card)) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	public boolean inSet(Card card) {
-		if (sets.contains(card.getCardSet())) {
-			return true;
-		}
-		return false;
+	public List<CardSet> getCardSets() {
+		return new ArrayList<CardSet>(sets);
 	}
 
 	public String getName() {

@@ -12,8 +12,8 @@ public class ManaMaxedCondition extends Condition {
 	}
 
 	@Override
-	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity target) {
-		return player.getMaxMana() >= GameLogic.MAX_MANA;
+	protected boolean isFulfilled(GameContext context, Player player, ConditionDesc desc, Entity source, Entity target) {
+		return (player.getMaxMana() >= GameLogic.MAX_MANA || player.getMana() >= GameLogic.MAX_MANA);
 	}
 
 }

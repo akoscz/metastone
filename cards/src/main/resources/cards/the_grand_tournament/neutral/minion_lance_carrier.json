@@ -1,5 +1,4 @@
 {
-	"id": "minion_lance_carrier",
 	"name": "Lance Carrier",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 		"spell": {
 			"class": "BuffSpell",
 			"attackBonus": 2
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

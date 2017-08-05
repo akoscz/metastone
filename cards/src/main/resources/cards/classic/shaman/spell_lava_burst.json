@@ -1,5 +1,4 @@
 {
-	"id": "spell_lava_burst",
 	"name": "Lava Burst",
 	"baseManaCost": 3,
 	"type": "SPELL",
@@ -14,6 +13,7 @@
 	"attributes": {
 		"OVERLOAD": 2
 	},
+	"collectible": true,
 	"set": "CLASSIC",
 	"fileFormatVersion": 1
 }

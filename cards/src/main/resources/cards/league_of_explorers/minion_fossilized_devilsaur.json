@@ -1,5 +1,4 @@
 {
-	"id": "minion_fossilized_devilsaur",
 	"name": "Fossilized Devilsaur",
 	"baseManaCost": 8,
 	"type": "MINION",
@@ -16,10 +15,12 @@
 			"attribute": "TAUNT"
 		},
 		"condition": {
-			"class": "RaceOnBoardCondition",
-			"race": "BEAST"
-		},
-		"resolvedLate": false
+			"class": "MinionOnBoardCondition",
+			"cardFilter": {
+				"class": "RaceFilter",
+				"race": "BEAST"
+			}
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

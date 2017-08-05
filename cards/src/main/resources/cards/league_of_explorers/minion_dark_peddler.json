@@ -1,5 +1,4 @@
 {
-	"id": "minion_dark_peddler",
 	"name": "Dark Peddler",
 	"baseManaCost": 2,
 	"type": "MINION",
@@ -20,8 +19,7 @@
 				"class": "CardFilter",
 				"manaCost": 1
 			}
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

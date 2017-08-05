@@ -1,5 +1,4 @@
 {
-	"id": "minion_silver_hand_knight",
 	"name": "Silver Hand Knight",
 	"baseManaCost": 5,
 	"type": "MINION",
@@ -13,8 +12,7 @@
 			"class": "SummonSpell",
 			"card": "token_squire",
 			"boardPositionRelative": "RIGHT"
-		},
-		"resolvedLate": false
+		}
 	},
 	"attributes": {
 		"BATTLECRY": true

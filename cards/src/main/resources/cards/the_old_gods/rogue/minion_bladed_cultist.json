@@ -1,5 +1,4 @@
 {
-	"id": "minion_bladed_cultist",
 	"name": "Bladed Cultist",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -19,6 +18,9 @@
 		"condition": {
 			"class": "ComboCondition"
 		}
+	},
+	"attributes": {
+		"COMBO": true
 	},
 	"collectible": true,
 	"set": "THE_OLD_GODS",

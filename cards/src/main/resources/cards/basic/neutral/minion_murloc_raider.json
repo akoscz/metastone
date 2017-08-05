@@ -1,5 +1,4 @@
 {
-	"id": "minion_murloc_raider",
 	"name": "Murloc Raider",
 	"baseManaCost": 1,
 	"type": "MINION",
@@ -8,7 +7,8 @@
 	"heroClass": "ANY",
 	"rarity": "FREE",
 	"race": "MURLOC",
+	"description": "",
 	"collectible": true,
-	"set": "CLASSIC",
+	"set": "BASIC",
 	"fileFormatVersion": 1
 }

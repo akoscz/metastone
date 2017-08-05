@@ -1,5 +1,4 @@
 {
-	"id": "minion_jeeves",
 	"name": "Jeeves",
 	"baseManaCost": 4,
 	"type": "MINION",
@@ -20,10 +19,7 @@
 			"value": {
 				"class": "AlgebraicValueProvider",
 				"operation": "SUBTRACT",
-				"value1": {
-					"class": "ConstantValueProvider",
-					"value": 3
-				},
+				"value1": 3,
 				"value2": {
 					"class": "PlayerAttributeValueProvider",
 					"targetPlayer": "SELF",

@@ -9,7 +9,7 @@ import net.demilich.metastone.game.cards.SecretCard;
 import net.demilich.metastone.game.entities.Entity;
 import net.demilich.metastone.game.spells.desc.SpellArg;
 import net.demilich.metastone.game.spells.desc.SpellDesc;
-import net.demilich.metastone.game.spells.trigger.secrets.Secret;
+import net.demilich.metastone.game.spells.trigger.types.Secret;
 
 public class PutRandomSecretIntoPlaySpell extends Spell {
 
@@ -49,8 +49,7 @@ public class PutRandomSecretIntoPlaySpell extends Spell {
 			SpellDesc secretSpellDesc = secretCard.getSpell();
 			Secret secret = (Secret) secretSpellDesc.get(SpellArg.SECRET);
 			context.getLogic().playSecret(player, secret, false);
-			context.getLogic().removeCard(player.getId(), secretCard);
-			player.getDeck().remove(secretCard);
+			context.getLogic().removeCardFromDeck(player.getId(), secretCard);
 
 		}
 	}
